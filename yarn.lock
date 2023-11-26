@@ -449,6 +449,11 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.6.tgz"
   integrity sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==
 
+"@heroicons/react@^2.0.18":
+  version "2.0.18"
+  resolved "https://registry.npmjs.org/@heroicons/react/-/react-2.0.18.tgz"
+  integrity sha512-7TyMjRrZZMBPa+/5Y8lN0iyvUU/01PeMGX2+RE7cQWpEUIcb4QotzUObFkJDejj/HUH4qjP/eQ0gzzKs2f+6Yw==
+
 "@humanwhocodes/config-array@^0.11.13":
   version "0.11.13"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.13.tgz"
@@ -562,6 +567,11 @@
   version "14.0.1"
   resolved "https://registry.npmjs.org/@next/swc-win32-ia32-msvc/-/swc-win32-ia32-msvc-14.0.1.tgz"
   integrity sha512-oFpHphN4ygAgZUKjzga7SoH2VGbEJXZa/KL8bHCAwCjDWle6R1SpiGOdUdA8EJ9YsG1TYWpzY6FTbUA+iAJeww==
+
+"@next/swc-win32-x64-msvc@14.0.1":
+  version "14.0.1"
+  resolved "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-14.0.1.tgz"
+  integrity sha512-FFp3nOJ/5qSpeWT0BZQ+YE1pSMk4IMpkME/1DwKBwhg4mJLB9L+6EXuJi4JEwaJdl5iN+UUlmUD3IsR1kx5fAg==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
@@ -1530,6 +1540,15 @@ axe-core@=4.7.0:
   version "4.7.0"
   resolved "https://registry.npmjs.org/axe-core/-/axe-core-4.7.0.tgz"
   integrity sha512-M0JtH+hlOL5pLQwHOLNYZaXuhqmvS8oExsqB1SBYgA4Dk7u/xx+YdGHXaK5pyUfed5mYXdlYiphWq3G8cRi5JQ==
+
+axios@^1.6.2:
+  version "1.6.2"
+  resolved "https://registry.npmjs.org/axios/-/axios-1.6.2.tgz"
+  integrity sha512-7i24Ri4pmDRfJTR7LDBhsOTtcm+9kjX5WiY1X3wIisx6G9So3pfMkEiU7emUBe46oceVImccTEM3k6C5dbVW8A==
+  dependencies:
+    follow-redirects "^1.15.0"
+    form-data "^4.0.0"
+    proxy-from-env "^1.1.0"
 
 axobject-query@^3.2.1:
   version "3.2.1"
@@ -2886,7 +2905,7 @@ focus-lock@^1.0.0:
   dependencies:
     tslib "^2.0.3"
 
-follow-redirects@^1.15.2:
+follow-redirects@^1.15.0, follow-redirects@^1.15.2:
   version "1.15.3"
   resolved "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.3.tgz"
   integrity sha512-1VzOtuEM8pC9SFU1E+8KfTjZyMztRsgEfwQl44z8A25uy13jSzTj6dyK2Df52iV0vgHCfBwLhDWevLn95w5v6Q==
@@ -2912,7 +2931,7 @@ fraction.js@^4.3.6:
   resolved "https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz"
   integrity sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==
 
-framer-motion@^10.0.0, framer-motion@^10.16.2:
+framer-motion@^10.0.0, framer-motion@^10.16.2, framer-motion@^10.16.5:
   version "10.16.5"
   resolved "https://registry.npmjs.org/framer-motion/-/framer-motion-10.16.5.tgz"
   integrity sha512-GEzVjOYP2MIpV9bT/GbhcsBNoImG3/2X3O/xVNWmktkv9MdJ7P/44zELm/7Fjb+O3v39SmKFnoDQB32giThzpg==
@@ -4166,7 +4185,12 @@ next-sanity@^5.5.10:
     "@sanity/webhook" "3.0.1"
     groq "^3.0.0"
 
-"next@^13.0.0 || ^14.0.0", next@14.0.1:
+next-themes@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.npmjs.org/next-themes/-/next-themes-0.2.1.tgz"
+  integrity sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==
+
+next@*, "next@^13.0.0 || ^14.0.0", next@14.0.1:
   version "14.0.1"
   resolved "https://registry.npmjs.org/next/-/next-14.0.1.tgz"
   integrity sha512-s4YaLpE4b0gmb3ggtmpmV+wt+lPRuGtANzojMQ2+gmBpgX9w5fTbjsy6dXByBuENsdCX5pukZH/GxdFgO62+pA==
@@ -4687,6 +4711,11 @@ property-information@^5.0.0:
   dependencies:
     xtend "^4.0.0"
 
+proxy-from-env@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npmjs.org/proxy-from-env/-/proxy-from-env-1.1.0.tgz"
+  integrity sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
+
 pseudomap@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/pseudomap/-/pseudomap-1.0.2.tgz"
@@ -4764,7 +4793,7 @@ react-copy-to-clipboard@^5.0.4:
     copy-to-clipboard "^3.3.1"
     prop-types "^15.8.1"
 
-react-dom@^18, react-dom@^18.0.0, react-dom@^18.2.0, "react-dom@>= 16.8.0", react-dom@>=16.8.0, react-dom@>=18.2.0:
+react-dom@*, react-dom@^18, react-dom@^18.0.0, react-dom@^18.2.0, "react-dom@>= 16.8.0", react-dom@>=16.8.0, react-dom@>=18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -4834,7 +4863,7 @@ react-style-proptype@^3.2.2:
   dependencies:
     prop-types "^15.5.4"
 
-"react@^15 || ^16 || ^17 || ^18", "react@^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^15.3.0 || 16 || 17 || 18", "react@^16.8 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9 || ^17 || ^18", "react@^17 || ^18", react@^18, react@^18.0.0, react@^18.2.0, "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=15.0.0, react@>=16.8.0, react@>=17.0.0, react@>=18.2.0:
+react@*, "react@^15 || ^16 || ^17 || ^18", "react@^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^15.3.0 || 16 || 17 || 18", "react@^16.8 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.9 || ^17 || ^18", "react@^17 || ^18", react@^18, react@^18.0.0, react@^18.2.0, "react@>= 16", "react@>= 16.8.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", react@>=15.0.0, react@>=16.8.0, react@>=17.0.0, react@>=18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
