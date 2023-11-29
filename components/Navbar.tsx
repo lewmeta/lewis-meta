@@ -37,7 +37,7 @@ const CustomMobileLink = ({ href, title, className = "", toggle }: any) => {
 }
 
 const Navbar = () => {
-  const [mode, setMode] = useThemeSwitcher()
+  const { mode, setMode } = useThemeSwitcher()
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isMetaHeaderSticky, setIsMetaHeaderSticky] = useState<boolean>(false);
 

@@ -8,7 +8,7 @@ import arrow from "../../public/images/icons/icon.svg"
 import myworks from "../../public/images/my-works.png"
 import me from "../../public/images/me.png"
 import TransitionEffect from "../TransitionEffect"
-import { ArrowIcon } from '../Icon'
+import { ArrowIcon, CustomArrowIcon } from '../Icon'
 const Home = () => {
     return (
         <>
@@ -30,10 +30,7 @@ const Home = () => {
                                     Meta.</h1>
                                 <p>I am a Web Designer, UI/UX Designer <br /> based in kenya.</p>
                                 <Link href={"/about"} className='block absolute right-7 bottom-7 transition-all duration-300 ease-in opacity-20 text-yellow-500 hover:opacity-100 group-hover:opacity-100 z-10'>
-                                    <Image src={arrow} alt='arrow-svg' width={40} height={40}
-                                        priority
-                                    />
-                                    {/* <ArrowIcon className="" fill={""} stroke={"stroke-yellow-500"} /> */}
+                                      <CustomArrowIcon className={"text-blueColor dark:text-white w-10 h-10"} />
                                 </Link>
                             </div>
                         </div>
@@ -53,7 +50,7 @@ const Home = () => {
                             </div>
                             <div className="w-full h-full relative flex flex-wrap">
                                 <div className="md:w-1/2 md:pr-3 pr-0 w-full md:mb-0 mb-6 ">
-                                    <div className="relative rounded-3xl h-full p-6 flex flex-col bg-white dark:bg-black justify-center items-center">
+                                    <div className="relative rounded-3xl h-full p-6 flex flex-col bg-white dark:bg-black justify-center group items-center">
                                         <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-10 z-10 dark:block hidden' />
                                         <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30 -m-0.5 opacity-30 dark:block hidden' />
                                         <Image src={bg1} sizes="(max-width: 768px) 100vw, (max-width:1200px) 50vw 30vw, " fill alt='bg-image' priority className='absolute left-0 top-0 w-full h-full rounded-3xl opacity-10 z-10 object-cover dark:block hidden' />
@@ -64,17 +61,14 @@ const Home = () => {
                                                 <h4 className='text-primaryText text-xs opacity-70 -tracking-tighter mb-3 uppercase font-semibold'>MORE ABOUT ME</h4>
                                                 <h1 className='text-lg text-ligthText dark:text-white font-medium leading-none'>Credentials</h1>
                                             </div>
-                                            <Link href={"/credentials"} className="z-10">
-                                                <Image src={arrow} alt='arrow-svg' width={40} height={40}
-                                                    priority
-                                                    sizes="(max-width: 768px) 100vw, (max-width:1200px) 50vw 30vw, "
-                                                    className='opacity-25 hover:opacity-100 transition-all duration-300 ease-in' />
+                                            <Link href={"/credential"} className="z-10 dark:text-white opacity-30 group-hover:opacity-100 transition-all duration-300 ease-in">
+                                                <CustomArrowIcon className={"text-blueColor dark:text-white w-10 h-10"} />
                                             </Link>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="md:w-1/2 md:pl-3 pl-0 w-full ">
-                                    <div className="relative rounded-3xl h-full p-6 bg-white dark:bg-black flex flex-col items-center justify-center">
+                                    <div className="relative rounded-3xl h-full p-6 group bg-white dark:bg-black flex flex-col items-center justify-center">
                                         <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-10 z-10' />
                                         <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30 -m-0.5 opacity-30' />
                                         <Image src={bg1} priority sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," alt='bg-image' className='absolute left-0 top-0 w-full h-full rounded-3xl opacity-10 z-10 object-cover' />
@@ -85,10 +79,8 @@ const Home = () => {
                                                 <h4 className='text-primaryText text-xs opacity-70 -tracking-tighter mb-3 uppercase font-semibold'>showcase</h4>
                                                 <h1 className='text-lg text-ligthText dark:text-white font-medium leading-none capital'>Projects</h1>
                                             </div>
-                                            <Link href={"/works"} className="z-10">
-                                                <Image src={arrow} alt='arrow-svg' width={40} height={40}
-                                                    priority
-                                                    className='opacity-25 hover:opacity-100 transition-all duration-300 ease-in' />
+                                            <Link href={"/works"} className="z-10 dark:text-white opacity-30 group-hover:opacity-100 transition-all duration-300 ease-in">
+                                                <CustomArrowIcon className={"text-blueColor dark:text-white w-10 h-10"} />
                                             </Link>
                                         </div>
                                     </div>
