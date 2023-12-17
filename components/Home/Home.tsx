@@ -1,94 +1,42 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import me from "../../public/images/lew.jpg"
+import urlFor from '@/lib/urlFor'
 
-import bg1 from "../../public/images/bg1.png"
-import signImg from "../../public/images/sign.png"
-import arrow from "../../public/images/icons/icon.svg"
-import myworks from "../../public/images/my-works.png"
-import me from "../../public/images/me.png"
-import TransitionEffect from "../TransitionEffect"
-import { ArrowIcon, CustomArrowIcon } from '../Icon'
-const Home = () => {
+type Props = {
+    home: HomeProps[];
+}
+const Home = ({ home }: Props) => {
     return (
         <>
-            <TransitionEffect />
             <div className='w-full h-full z-10'>
-                <div className="w-full flex flex-wrap items-center">
-                    <div className="w-full lg:w-1/2 lg:pr-2 pr-0 flex-grow-0 flex-shrink-0 basis-auto md:mb-0 min-h-96 mb-7">
-                        <div className="w-full h-full relative flex items-start py-9 md:px-8 px-4 lg:px-11 flex-wrap rounded-3xl z-10 bg-white dark:bg-black group">
-                            <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-10 z-10' />
-                            <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30 -m-0.5 opacity-50' />
-                            <Image src={bg1} width={800} height={800} alt='bg-image' priority className='absolute left-0 top-0 w-full h-full rounded-3xl opacity-10 z-10 object-cover' />
-                            <Link href={"/about"} className='absolute left-0 top-0 w-full h-full z-10' />
-                            <div className="lg:w-1/2 w-full h-60  rounded-tl-3xl rounded-br-3xl text-center flex-grow-0 flex-shrink-0 basis-auto bg-shadowImageDark overflow-hidden relative">
-                                <Image src={me} alt='me' sizes="(max-width: 768px) 100vw, (max-width:1200px) 50vw 30vw, " priority className='object-cover w-full h-full' />
-                            </div>
-                            <div className="flex-grow-0 flex-shrink-0 basis-auto md:w-1/2 w-full pt-7 order-1  lg:pl-8">
-                                <h4 className='text-primaryText opacity-70 text-sm tracking-wider mb-0.5'>A WEB DESIGNER</h4>
-                                <h1 className='text-4xl leading-10 text-ligthText dark:text-white font-medium my-3'>Lewis
-                                    Meta.</h1>
-                                <p>I am a Web Designer, UI/UX Designer <br /> based in kenya.</p>
-                                <Link href={"/about"} className='block absolute right-7 bottom-7 transition-all duration-300 ease-in opacity-20 text-yellow-500 hover:opacity-100 group-hover:opacity-100 z-10'>
-                                      <CustomArrowIcon className={"text-blueColor dark:text-white w-10 h-10"} />
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="w-full lg:w-1/2 lg:pl-2 pl-0 flex-grow-0 flex-shrink-0 basis-auto lg:mt-0 md:mt-6 mt-0 min-h-96">
-                        <div className="w-full h-full relative flex flex-col items-start  ">
-                            <div className="py-4 mb-6 relative w-full bg-white dark:bg-black rounded-3xl dark:rounded-none">
-                                <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-25' />
-                                <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30 -m-0.5 opacity-30' />
-                                <div className="relative w-full h-5 overflow-x-hidden ">
-                                    <div className="absolute whitespace-nowrap will-change-transform text-xs slideanime transition-all duration-300 ease-in rounded-3xl ">
-                                        <span>LATEST WORK AND <b className='dark:text-white text-ligthText font-normal uppercase'>FEATURED</b></span>
-                                        <span className='pl-2'>LATEST WORK AND <b className='dark:text-white text-black font-normal uppercase'>new features</b></span>
-                                        <span className='pl-2'>LATEST WORK AND <b className='dark:text-white text-ligthText font-normal uppercase'>new features</b></span>
-                                    </div>
+                {home.map((item, index) => (
+                    <div className="w-full flex flex-wrap items-center" key={index}>
+                        <div className="w-full pr-0 flex-grow-0 flex-shrink-0 basis-auto md:mb-0 min-h-96 mb-7">
+                            <div className="w-full h-full relative flex items-center flex-wrap rounded-3xl z-10 group lg:h-[550px] ">
+                                <div className="lg:w-[33.333%] lg:order-1 order-2 w-full h-full rounded-3xl text-center flex-grow-0 flex-shrink-0 basis-auto bg-shadowImageDark items-center justify-center relative">
+                                    <Image src={urlFor(item.image).url()} width={800} height={800} alt='me' sizes="(max-width: 768px) 100vw, (max-width:1200px) 50vw 30vw, " priority className='transform grayscale-0 object-cover w-full lg:w-full lg:h-full h-[500px] lg:rounded-3xl' />
+                                    {/* <Hireme /> */}
                                 </div>
-                            </div>
-                            <div className="w-full h-full relative flex flex-wrap">
-                                <div className="md:w-1/2 md:pr-3 pr-0 w-full md:mb-0 mb-6 ">
-                                    <div className="relative rounded-3xl h-full p-6 flex flex-col bg-white dark:bg-black justify-center group items-center">
-                                        <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-10 z-10 dark:block hidden' />
-                                        <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30 -m-0.5 opacity-30 dark:block hidden' />
-                                        <Image src={bg1} sizes="(max-width: 768px) 100vw, (max-width:1200px) 50vw 30vw, " fill alt='bg-image' priority className='absolute left-0 top-0 w-full h-full rounded-3xl opacity-10 z-10 object-cover dark:block hidden' />
-                                        <Link href={"/credential"} className='absolute left-0 top-0 w-full h-full z-10' />
-                                        <Image src={signImg} alt='bg-image' sizes="(max-width: 768px) 100vw, (max-width:1200px) 50vw 30vw, " className='object-cover' priority />
-                                        <div className="relative flex-wrap w-full justify-between items-center flex mt-7">
-                                            <div className="relative">
-                                                <h4 className='text-primaryText text-xs opacity-70 -tracking-tighter mb-3 uppercase font-semibold'>MORE ABOUT ME</h4>
-                                                <h1 className='text-lg text-ligthText dark:text-white font-medium leading-none'>Credentials</h1>
-                                            </div>
-                                            <Link href={"/credential"} className="z-10 dark:text-white opacity-30 group-hover:opacity-100 transition-all duration-300 ease-in">
-                                                <CustomArrowIcon className={"text-blueColor dark:text-white w-10 h-10"} />
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="md:w-1/2 md:pl-3 pl-0 w-full ">
-                                    <div className="relative rounded-3xl h-full p-6 group bg-white dark:bg-black flex flex-col items-center justify-center">
-                                        <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-10 z-10' />
-                                        <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30 -m-0.5 opacity-30' />
-                                        <Image src={bg1} priority sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," alt='bg-image' className='absolute left-0 top-0 w-full h-full rounded-3xl opacity-10 z-10 object-cover' />
-                                        <Link href={"/works"} className='absolute left-0 top-0 w-full h-full z-10' />
-                                        <Image src={myworks} alt='bg-image' width={300} height={300} priority className='object-cover ' />
-                                        <div className="relative flex-wrap w-full justify-between items-center flex mt-0">
-                                            <div className="relative">
-                                                <h4 className='text-primaryText text-xs opacity-70 -tracking-tighter mb-3 uppercase font-semibold'>showcase</h4>
-                                                <h1 className='text-lg text-ligthText dark:text-white font-medium leading-none capital'>Projects</h1>
-                                            </div>
-                                            <Link href={"/works"} className="z-10 dark:text-white opacity-30 group-hover:opacity-100 transition-all duration-300 ease-in">
-                                                <CustomArrowIcon className={"text-blueColor dark:text-white w-10 h-10"} />
-                                            </Link>
+                                <div className="flex-grow-0 flex-shrink-0 basis-auto lg:w-[66.666%] w-full lg:order-2 order-1 z-20 lg:mb-0 mb-[50px] ">
+                                    <div className="w-full flex flex-col lg:mt-0 mt-[50px] lg:pl-[120px]">
+                                        {/* <Hireme /> */}
+                                        <h1 className='dark:text-white text-black lg:text-[60px] lg:leading-[70px]  xl:text-[80px] font-medium xl:leading-[90px] tracking-wider mb-0.5 md:text-[50px] md:leading-[60px] sm:text-[40px] sm:leading-[50px] text-[35px] leading-[45px]'>Hi, I&apos;m <span className="text-blueColor">{item.name}</span>
+                                        </h1>
+                                        <h1 className='lg:text-[40px] lg:leading-[50px] md:text-[28px] md:leading-[35px] text-[22px] leading-[28px] font-semibold text-ligthText dark:text-white my-3'>{item.title}</h1>
+                                        <p className="pt-[30px] text-base font-light max-w-[550px] w-full leading-[26px]">{item.bio}</p>
+
+                                        <div className="w-full flex gap-6 items-center mt-[30px] ">
+                                            <Link href="/credential" className="py-[13px] px-[26px] w-auto bg-blueColor text-base text-white hover:bg-white hover:text-black border border-transparent hover:dark:bg-black hover:dark:border-white/[0.3] rounded-sm overflow-hidden  hover:dark:text-white  hover:border-black/[0.09] transition-all duration-300 ease-linear">More about me</Link>
+                                            <Link href="/dummy.pdf" download={true} target={"_blank"} className="py-[13px] px-[26px] w-auto bg-blueColor text-base text-white ">Download CV</Link>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                ))}
             </div>
         </>
     )

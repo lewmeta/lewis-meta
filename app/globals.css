@@ -19,3 +19,14 @@
   width: 30px;
   height: 30px;
 }
+
+.webkitShadow {
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(250, 250, 250, 0.2)));
+}
+
+.clipPath {
+  clip: rect(0em, 0.5em, 1em, 0em);
+}
+.clipAuto {
+  clip: rect(auto, auto, auto, auto);
+}

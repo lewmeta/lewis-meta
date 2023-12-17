@@ -10,27 +10,42 @@ export const myStructure = (S) =>
                 .title("Home Page")
                 .child(
                     S.list()
-                        .title('Home Conent')
+                        .title('Home Content')
                         .items([
-                            S.documentTypeListItem("navbar")
-                                .title('Navbar Content'),
-                            S.documentTypeListItem("homeAbout")
-                                .title('Home About'),
+                            S.documentTypeListItem("home")
+                                .title('Create Home Page'),
                         ])
                 ),
             S.listItem()
-                .title("About Me")
+                .title("About Me Page")
                 .child(
                     S.list()
-                        .title('Abouts')
+                        .title('About Me')
                         .items([
-                            // S.documentTypeListItem("aboutusIntro")
-                                // .title('ABOUTUS INTRO'),
+                            S.documentTypeListItem("aboutIntro")
+                                .title('Creat AboutMe '),
+                            S.documentTypeListItem("achievements")
+                                .title('Creat your Achievements '),
+                            S.documentTypeListItem("mystory")
+                                .title('Creat your story '),
+                        ])
+                ),
+            S.listItem()
+                .title("Credentials Page")
+                .child(
+                    S.list()
+                        .title('More about me')
+                        .items([
+                            S.documentTypeListItem("credentials")
+                                .title('Creat Credentials '),
+                            S.documentTypeListItem("experience")
+                                .title('Creat Experiences '),
+                            S.documentTypeListItem("education")
+                                .title('Creat your Education '),
                         ])
                 ),
             S.listItem()
                 .title('Articles Page ')
-                .icon(() => '📄')
                 .child(
                     S.list()
                         .title('Blog Content')
@@ -40,10 +55,20 @@ export const myStructure = (S) =>
                         ])
                 ),
             S.listItem()
-                .title("Our Projects")
+                .title('My Services Page ')
                 .child(
                     S.list()
-                        .title('Projects')
+                        .title('My Services')
+                        .items([
+                            S.documentTypeListItem("myservices")
+                                .title('Create Services'),
+                        ])
+                ),
+            S.listItem()
+                .title("Projects Page")
+                .child(
+                    S.list()
+                        .title('Your Projects')
                         .items([
                             S.documentTypeListItem("project")
                                 .title('Create Projects'),
@@ -56,10 +81,10 @@ export const myStructure = (S) =>
                     S.list()
                         .title('Contact Information')
                         .items([
-                            S.documentTypeListItem("contactInfo")
-                                .title('Contact Info '),
-                            S.documentTypeListItem("contactMap")
-                                .title('Contact Map'),
+                            // S.documentTypeListItem("contactInfo")
+                            //     .title('Contact Info '),
+                            // S.documentTypeListItem("contactMap")
+                            //     .title('Contact Map'),
                         ])
                 ),
         ]);

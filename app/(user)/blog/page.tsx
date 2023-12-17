@@ -1,7 +1,10 @@
 import Blog from "@/components/Blog/Blog";
-import {Metadata} from "next"
 import Layout from "@/components/Layout";
 import TransitionEffect from "@/components/TransitionEffect";
+import Header from "@/components/Blog/Header";
+import { client } from "@/lib/sanity.client";
+import { postQuery } from "@/lib/queries";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: 'My articles | Lewis Meta',
@@ -13,15 +16,18 @@ export const metadata: Metadata = {
         publishedTime: '2023-01-01T00:00:00.000Z',
         authors: ['Lewis', 'Meta'],
     },
-  }
+}
   
+const post = await client.fetch(postQuery)
+
 export default function Page() {
     return (
         <>
             <TransitionEffect />
-            <main className='w-full min-h-screen pt-16'>
+            <main className='w-full min-h-screen '>
+                {/* <Header/> */}
                 <Layout className='h-full'>
-                    <Blog />
+                    <Blog post={post}/>
                 </Layout>
             </main>
         </>

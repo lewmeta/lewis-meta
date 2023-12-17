@@ -7,6 +7,7 @@ import bg1 from "../../public/images/bg1.png"
 import arrow from "../../public/images/icons/icon.svg"
 import arro from "../../public/images/icons/icon2-2.png"
 import { useInView, useMotionValue, useSpring } from 'framer-motion'
+import { GithubIcon } from '../Icon'
 
 const AnimatedNumbers = ({ value }: any) => {
     const ref = useRef<HTMLSpanElement | null>(null);
@@ -37,7 +38,7 @@ const AnimatedNumbers = ({ value }: any) => {
 const Achievement = () => {
     return (
         <section className='w-full h-full mt-6'>
-            <div className="flex relative flex-wrap items-center">
+            <div className="flex relative flex-wrap items-center w-full">
                 <div className="lg:w-1/2 w-full lg:mb-0 mb-2 pl-0 pr-3">
                     <div className="w-full flex items-start flex-wrap relative h-full">
                         <div className="relative p-7 rounded-3xl h-full group w-full bg-white dark:bg-black">
@@ -72,7 +73,7 @@ const Achievement = () => {
                 </div>
                 <div className="lg:w-1/2 lg:mt-0 mb-4 lg:pl-3 w-full">
                     <div className="w-full flex items-start flex-wrap relative h-full">
-                        <div className="w-full relative pt-[83px] pb-[42px] rounded-3xl h-full group px-6 bg-white dark:bg-black">
+                        <div className="w-full relative pt-[103px] pb-[52px] rounded-3xl h-full group px-6 bg-white dark:bg-black">
                             <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-25' />
                             <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30 -m-0.5 opacity-30' />
                             <Image src={bg1} width={800} height={800} alt='bg-image' priority className='absolute left-0 top-0 w-full h-full rounded-3xl opacity-10 z-10 object-cover' />

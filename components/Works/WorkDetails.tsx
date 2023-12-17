@@ -4,7 +4,10 @@ import stars from "../../public/images/star.png"
 import projectDt1 from "../../public/images/project/project-dt-1.jpeg"
 import Layout from "../Layout"
 
-const WorkDetails = () => {
+type Props =  {
+    project:Projects;
+}
+const WorkDetails = ({project}:Props) => {
     return (
         <section className="w-full pt-[80px]">
             <Layout className="">

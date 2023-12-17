@@ -18,7 +18,7 @@ const Footer = () => {
               <Link href={"/about"} className='text-xs uppercase  hover:dark:text-light hover:text-blueColor transition-all duration-300 font-semibold -tracking-tighter  ease-in decoration-transparent '>About</Link>
             </li>
             <li className="">
-              <Link href={"/works"} className='text-xs uppercase  hover:dark:text-light hover:text-blueColor transition-all duration-300 font-semibold -tracking-tighter  ease-in decoration-transparent '>Works</Link>
+              <Link href={"/works"} className='text-xs uppercase  hover:dark:text-light hover:text-blueColor transition-all duration-300 font-semibold -tracking-tighter  ease-in decoration-transparent '>Projects</Link>
             </li>
             <li className="">
               <Link href={"/contact"} className='text-xs uppercase  hover:dark:text-light hover:text-blueColor transition-all duration-300 font-semibold -tracking-tighter  ease-in decoration-transparent '>Contact</Link>

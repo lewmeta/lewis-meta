@@ -12,7 +12,7 @@ const useThemeSwitcher = () => {
         const mediaQuery = window.matchMedia(preferDarkQuery);
         const userPref = window.localStorage.getItem("theme");
 
-        console.log(mediaQuery, "check for query")
+        // console.log(mediaQuery, "check for query")
         const handleChange = () => {
             if (userPref) {
                 let check = userPref === "dark" ? "dark" : "light";

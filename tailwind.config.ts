@@ -34,6 +34,7 @@ const config: Config = {
       boxShadow: {
         'custom': '0 10px 30px 0 rgb(44 130 237 / 40%)',
         'main' : '0 4px 24px -1px rgba(0,0,0,0.1)',
+        "new" : '0px 5px 10px 2px rgb(0,0,0,0.5)',
       },
       backgroundImage: {
         circularLight:
@@ -44,6 +45,9 @@ const config: Config = {
           "linear-gradient(120deg, rgb(255 255 255 / 12%), rgb(255 255 255 / 1%))",
         shadowImageDark:
           "linear-gradient(90deg, #5B78F6 -15%, #C2EBFF 58%, #5B78F6 97%)"
+      },
+      animation: {
+        'spin-slow': 'spin 8s linear infinite',
       },
     },
   },

@@ -27,14 +27,15 @@ export const metadata: Metadata = {
   applicationName: 'Next.js',
   referrer: 'origin-when-cross-origin',
   keywords: ['Next.js', 'React', 'JavaScript'],
-  authors: [{ name: 'Seb' }, { name: 'Josh', url: 'https://nextjs.org' }],
+  authors: [{ name: 'Lewis' }, { name: 'Meta', url: 'https://lewmeta.vercel.com' }],
   creator: 'Lewis Meta',
   publisher: 'Lewis Meta',
   openGraph: {
+    type: 'website',
+    url: 'https://lewmeta.vercel.com',
     title: 'Lewis Meta Portfolio',
     description: 'Welcome to my portfolio website. Lets work together',
-    url: 'https://nextjs.org',
-    siteName: 'LewMeta',
+    siteName: 'Lew Meta',
     images: [
       {
         url: 'https://nextjs.org/og.png',
@@ -49,7 +50,6 @@ export const metadata: Metadata = {
       },
     ],
     locale: 'en_US',
-    type: 'website',
   },
 }
 
