@@ -51,6 +51,8 @@ export const projectQuery = groq`*[_type == 'project']{
 
 export const homeQuery = groq`*[_type == "home"]{
  ..., 
+//  pdf.asset->url
+"pdf": pdf.asset->url,
 }`
 export const aboutIntroQuery = groq`*[_type == "aboutIntro"]{
  ..., 
@@ -73,3 +75,56 @@ export const experienceQuery = groq`*[_type == 'mystory']{
 
 } | order(_createdAt desc)`;
 
+
+
+export const credentialsQuery = groq`*[_type == 'credentials']{
+  ...,
+  "socials": socials[]->{
+    url,
+    platform,
+    "bioArray": bioArray[]->{
+        description,
+        id,
+    }
+  },
+
+} | order(_createdAt desc)`;
+
+
+export const skillsQuery = groq`*[_type == 'skills']{
+  ...,
+} | order(_createdAt desc)`;
+
+
+export const educationQuery = groq`*[_type == 'education']{
+  ...,
+} | order(_createdAt desc)`;
+
+
+export const workexperienceQuery = groq`*[_type == 'experience']{
+  ...,
+} | order(_createdAt desc)`;
+
+
+
+export const servicesQuery = groq`*[_type == 'myservices']{
+  ...,
+  "servicesInfo": servicesInfo[]->{
+   image,
+   title,
+   price,
+    "points": points[]->{
+        title,
+        id,
+    },
+    "bioArrays": bioArrays[]->{
+        description,
+        id,
+    },
+  },
+    "serviceTitle": serviceTitle[]->{
+        title,
+        id,
+    },
+
+} | order(_createdAt desc)`;

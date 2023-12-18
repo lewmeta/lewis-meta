@@ -6,18 +6,28 @@ export default defineType({
     type: "document",
     fields: [
         defineField({
-            name: "title",
-            title: "Title",
+            name: "name",
+            title: "Your name",
+            description: "Enter your name here!",
             type: "string",
         }),
         defineField({
-            name: "subtitle",
-            title: "Subtitle",
+            name: "image",
+            title: "Main Image",
+            type: "image",
+            options: {
+                hotspot: true,
+            },
+        }),
+        defineField({
+            name: "link",
+            title: "Social Link",
+            description: "Give a social link",
             type: "string",
         }),
         defineField({
-            name: "description",
-            title: "Description",
+            name: "handle",
+            title: "Social Handle",
             type: "string",
         }),
         defineField({
@@ -35,7 +45,7 @@ export default defineType({
     ],
     preview: {
         select: {
-            title: "title",
+            title: "name",
             media: 'image'
         },
     },

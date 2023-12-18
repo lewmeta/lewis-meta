@@ -20,6 +20,7 @@ const Details = ({position, company, companyLink, time, address, work}:any) => {
         </li>
     )
 }
+
 const Experiences = () => {
 
     const ref = useRef(null);

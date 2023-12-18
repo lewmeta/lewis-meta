@@ -42,6 +42,8 @@ export const myStructure = (S) =>
                                 .title('Creat Experiences '),
                             S.documentTypeListItem("education")
                                 .title('Creat your Education '),
+                            S.documentTypeListItem("skills")
+                                .title('Creat your Skills '),
                         ])
                 ),
             S.listItem()

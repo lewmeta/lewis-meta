@@ -143,7 +143,7 @@ const Navbar = () => {
               : null
             }
             <div className="flex items-center justify-end">
-              <div className="md:flex hidden items-center w-full gap-2 ">
+              <div className="lg:flex hidden items-center w-full gap-2 ">
                 <motion.div className="w-[30px] h-[30px] rounded-full text-base group font-semibold transition-all duration-100 ease-in-out bg-blueColor text-white flex items-center justify-center " whileHover={{y:-2}} whileTap={{scale: .9}}>
                   <Link href={"https://instagram"} target='_blank'>
                     <FaInstagram className="text-base " />

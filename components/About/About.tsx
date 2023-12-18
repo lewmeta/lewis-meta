@@ -2,7 +2,6 @@
 import React from 'react'
 import Image from "next/image"
 import stars from "../../public/images/star.png"
-import me from "../../public/images/lew.jpg"
 import Link from 'next/link'
 import urlFor from '@/lib/urlFor'
 

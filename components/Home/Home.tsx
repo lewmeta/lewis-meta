@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import me from "../../public/images/lew.jpg"
 import urlFor from '@/lib/urlFor'
 
 type Props = {
@@ -29,7 +28,7 @@ const Home = ({ home }: Props) => {
 
                                         <div className="w-full flex gap-6 items-center mt-[30px] ">
                                             <Link href="/credential" className="py-[13px] px-[26px] w-auto bg-blueColor text-base text-white hover:bg-white hover:text-black border border-transparent hover:dark:bg-black hover:dark:border-white/[0.3] rounded-sm overflow-hidden  hover:dark:text-white  hover:border-black/[0.09] transition-all duration-300 ease-linear">More about me</Link>
-                                            <Link href="/dummy.pdf" download={true} target={"_blank"} className="py-[13px] px-[26px] w-auto bg-blueColor text-base text-white ">Download CV</Link>
+                                            <Link href={item.pdf} download={true} target={"_blank"} className="py-[13px] px-[26px] w-auto bg-blueColor text-base text-white ">Download CV</Link>
                                         </div>
                                     </div>
                                 </div>

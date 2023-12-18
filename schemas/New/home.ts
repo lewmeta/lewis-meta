@@ -31,6 +31,12 @@ export default defineType({
                 hotspot: true,
             },
         }),
+        defineField({
+            name: "pdf",
+            title: "Upload Resume",
+            type: "file",
+            validation: Rule => Rule.required(),
+        }),
     ],
     preview: {
         select: {

@@ -74,6 +74,7 @@ interface HomeProps {
     name: string;
     title: string;
     bio: string;
+    pdf: string;
 }
 
 interface AboutIntro {
@@ -98,7 +99,7 @@ interface Story {
     title: string;
     description: string;
     subtitle: string;
-    points:Point[];
+    points: Point[];
 }
 interface Point {
     title: string;
@@ -109,8 +110,9 @@ interface Credentials {
     image: string;
     name: string;
     link: string;
+    handle: string;
     socials: Socials[];
-    bioArray: BioArray[];
+    bioArrays: BioArray[];
 }
 
 interface BioArray {
@@ -126,7 +128,7 @@ interface Experience {
     description: string;
 }
 
-interface Education {
+interface Educations {
     course: string;
     date: string;
     institution: string;
@@ -135,7 +137,8 @@ interface Education {
 
 interface Skills {
     title: string;
-    degree: number
+    // degree: number;
+    skillPercentage: number;
 }
 
 
@@ -143,15 +146,15 @@ interface Skills {
 
 interface MyServices {
     title: string;
-    servicesInfo:ServiceInfo[];
-    serviceTitles: ServiceTitle[]
+    servicesInfo: ServiceInfo[];
+    serviceTitle: ServiceTitle[]
 }
 interface ServiceInfo {
     image: string;
     title: string;
     price: string;
-    points:Point[];
-    bioArray: BioArray[];
+    points: Point[];
+    bioArrays: BioArray[];
 }
 
 interface ServiceTitle {
