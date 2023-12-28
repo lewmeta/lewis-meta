@@ -34,8 +34,9 @@ interface Projects extends Base {
     categories: Category[];
     mainImage: Image;
     slug: slug;
+    githubLink: string;
     title: string;
-    description: string;
+    description: slug;
     tags: Tag[];
     views: number; // new field added here
     singlePostInformations: [SinglePostInformation];

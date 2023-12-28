@@ -16,24 +16,15 @@ export default defineType({
       type: 'string',
     }),
     defineField({
-      name: 'image',
-      title: 'Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      }
-    }),
-    defineField({
-      name: 'buttonName',
-      title: 'Button Name',
-      description: "Give a name that will be shown in the button like: 'get a quote or send message..'",
-      type: 'string',
-    }),    
+      name: 'description',
+      title: 'Description',
+      type: "string",
+
+    }),   
   ],
   preview: {
     select: {
       title: 'subtitle',
-      media: 'image',
     },
   },
 })

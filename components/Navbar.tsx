@@ -78,8 +78,8 @@ const Navbar = () => {
         whileInView={"show"}
         className={` meta-header-area ${isMetaHeaderSticky ? "fixed h-[100px] bg-lightBlue dark:bg-black p-2 top-0 left-0 right-0  z-50" : ""}  `}>
         <Layout className="">
-          <div className="flex items-center justify-between w-full h-full">
-            <Link href={"/"} className="items-center justify-between py-6">
+          <div className="flex items-center justify-between w-full h-full !z-[100]">
+            <Link href={"/"} className="items-center justify-between py-6 z-[100]">
               <h1 className="lg:text-4xl text-3xl !-tracking-widest dark:text-white text-black leading-none">Le<span className='-tracking-widest leading-none text-blueColor '>W</span></h1>
             </Link>
 
@@ -114,19 +114,19 @@ const Navbar = () => {
 
               <motion.div
                 initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1, x: "-50%", y: "-50%" }}
+                animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: "0.5" }}
-                className="w-full fixed lg:hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50  items-center justify-between flex flex-col bg-white dark:bg-black rounded-sm  p-32">
+                className="w-full fixed lg:hidden top-0 right-0 left-0 bottom-0 z-50  items-center justify-between flex flex-col bg-lightBlue dark:bg-black rounded-sm  p-32">
                 <nav className="relative md:flex flex-wrap items-center justify-between py-2">
                   <ul className="flex flex-col justify-self-center items-center gap-4 m-0 p-0">
                     <li className="">
                       <CustomMobileLink href={"/"} className='text-base  transition-all duration-500 ease-in decoration-transparent' title="Home" toggle={handleClick} />
                     </li>
                     <li className="">
-                      <CustomMobileLink href={"/about"} className='text-base  transition-all duration-500 ease-in decoration-transparent' title="Services" toggle={handleClick} />
+                      <CustomMobileLink href={"/about"} className='text-base  transition-all duration-500 ease-in decoration-transparent' title="About" toggle={handleClick} />
                     </li>
                     <li className="">
-                      <CustomMobileLink href={"/services"} className='text-base  transition-all duration-500 ease-in decoration-transparent' title="About" toggle={handleClick} />
+                      <CustomMobileLink href={"/services"} className='text-base  transition-all duration-500 ease-in decoration-transparent' title="Services" toggle={handleClick} />
                     </li>
                     <li className="">
                       <CustomMobileLink href={"/works"} className='text-base  transition-all duration-500 ease-in decoration-transparent' title="Projects" toggle={handleClick} />
@@ -160,16 +160,16 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               </div>
-              <div className="lg:hidden lg:mr-0 mr-4 flex flex-col justify-end items-center cursor-pointer" onClick={handleClick}>
+              <div className="lg:hidden lg:mr-0 mr-4 flex flex-col justify-end items-center cursor-pointer z-[100]" onClick={handleClick}>
                 <span className={`w-6 h-0.5 bg-black dark:bg-white block transition-all duration-300 rounded-sm ease-in ${isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"}`}></span>
                 <span className={`w-6 my-0.5 h-0.5 bg-black dark:bg-white block transition-all duration-300 rounded-sm ease-in ${isOpen ? "opacity-0" : "opacity-100"}`}></span>
                 <span className={`w-6 h-0.5 bg-black dark:bg-white block transition-all rounded-sm duration-300 ease-in ${isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"}`}></span>
               </div>
 
-              <div className="w-[40px] flex items-end justify-end">
+              <div className="w-[40px] flex items-end justify-end !z-[100]">
                 <button
                   onClick={() => setMode(mode === "light" ? "dark" : "light")}
-                  className={`w-[30px] h-[30px] transition-all duration-200 ease-in-out flex border outline-none border-yellow-500 rounded-full  dark:border-yellow-500 items-center justify-center p-1 ${mode === "light" ? " text-yellow-500" : "text-white"}`}
+                  className={`w-[30px] h-[30px] z-[100] transition-all duration-200 ease-in-out flex border outline-none border-yellow-500 rounded-full  dark:border-yellow-500 items-center justify-center p-1 ${mode === "light" ? " text-yellow-500" : "text-white"}`}
                 >
                   {
                     mode === "dark" ? <SunIcon className={"fill-dark"} />

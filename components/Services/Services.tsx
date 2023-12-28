@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Layout from '../Layout'
 import { UserGroupIcon } from '@heroicons/react/20/solid'
-import { PencilIcon } from '../Icon'
+import CameraIcon, { GithubIcon, PencilIcon } from '../Icon'
 import Image from 'next/image'
 import Link from 'next/link'
 import urlFor from '@/lib/urlFor'
@@ -26,45 +26,32 @@ const Services = ({ experience }: Props) => {
             <div className="w-full" key={index}>
               <div className="w-full flex flex-wrap relative h-full ">
                 <div className="lg:w-[25%] w-full lg:pr-[15px]">
-                  <nav className="w-full sticky flex-none top-[18%]">
+                  <nav className="w-full sticky flex-none top-[18%] md:mb-0 mb-5">
                     <ul className="w-full gap-5 flex flex-col">
                       {item.serviceTitle.map((ser, index) => (
                         <li className={`text-black relative w-full cursor-pointer border border-black/[0.2] dark:border-white/[0.09] bg-white  dark:bg-black py-[30px] rounded-lg overflow-hidden px-[20px] flex items-center ${selectedCategory === `${ser.title}` ? '!bg-blueColor !border-white/[0.09]' : ''}`} onClick={() => handleCategorySelect(ser.title)} key={index}>
                           <div className={`w-[50px] h-[50px] border rounded-lg border-black/[0.2]  dark:border-white/[0.2] flex items-center justify-center p-2 text-blueColor ${selectedCategory === `${ser.title}` ? '!text-white !border-white/[0.2]' : ''}`}>
-                            <PencilIcon />
+                              {<PencilIcon/> }
                           </div>
-                          <h1 className={`pl-4 text-[16px] font-semibold dark:text-white text-black ${selectedCategory === `${ser.title}` ? '!text-white !border-white/[0.2]' : ''}`}>{ser.title}</h1>
+                          <h1 className={`pl-4 text-[16px] font-semibold dark:text-white text-black ${selectedCategory === `${ser.title}` ? '!text-white mb-4 !border-white/[0.2]' : ''}`}>{ser.title}</h1>
                         </li>
                       ))}
-                      {/* <li className={`text-black relative w-full cursor-pointer border border-black/[0.2] dark:border-white/[0.09] bg-white  dark:bg-black py-[30px] rounded-lg overflow-hidden px-[20px] flex items-center ${selectedCategory === "Web Development" ? '!bg-blueColor !border-white/[0.09]' : ''}`} onClick={() => handleCategorySelect('Web Development')}>
-                      <div className={`w-[50px] h-[50px] border rounded-lg border-black/[0.2]  dark:border-white/[0.2] flex items-center justify-center p-2 text-blueColor ${selectedCategory === "Web Development" ? '!text-white !border-white/[0.2]' : ''}`}>
-                        <PencilIcon />
-                      </div>
-                      <h1 className={`pl-4 text-[16px] font-semibold dark:text-white text-black ${selectedCategory === "Web Development" ? '!text-white !border-white/[0.2]' : ''}`}>Web Development</h1>
-                    </li>
-                    <li className={`text-black relative w-full cursor-pointer border border-black/[0.2] dark:border-white/[0.09] bg-white  dark:bg-black py-[30px] rounded-lg overflow-hidden px-[20px] flex items-center ${selectedCategory === "SEO Optimization" ? '!bg-blueColor !border-white/[0.09]' : ''}`} onClick={() => handleCategorySelect('SEO Optimization')}>
-                      <div className={`w-[50px] h-[50px] border rounded-lg border-black/[0.2]  dark:border-white/[0.2] flex items-center justify-center p-2 text-blueColor ${selectedCategory === "SEO Optimization" ? '!text-white !border-white/[0.2]' : ''}`}>
-                        <PencilIcon />
-                      </div>
-                      <h1 className={`pl-4 text-[16px] font-semibold dark:text-white text-black ${selectedCategory === "SEO Optimization" ? '!text-white !border-white/[0.2]' : ''}`}>SEO Optimization</h1>
-                    </li> */}
-
                     </ul>
                   </nav>
                 </div>
-                <div className="lg:w-[75%] w-full lg:pl-[15px]">
+                <div className="lg:w-[75%] w-full md:mt-5 lg:mt-0 lg:pl-[15px]">
                   {item.servicesInfo.map((serve, index) => (
                     <div className="w-full" key={index}>
                       {selectedCategory == `${serve.title}` && (
-                        <div className="w-full dark:bg-black bg-white rounded-lg border border-black/[0.2]  dark:border-white/[0.2] p-[50px] relative">
+                        <div className="w-full dark:bg-black bg-white rounded-lg border border-black/[0.2]  dark:border-white/[0.2] p-[20px] md:[20px] lg:p-[50px] relative">
                           <div className="w-full flex flex-wrap">
-                            <div className="w-full md:w-[58.333%] md:pr-[15px]">
+                            <div className="w-full md:w-[58.333%]">
                               <div className="w-full rounded-sm overflow-hidden">
-                                <Image src={urlFor(serve.image).url()} alt='3' width={700} height={600} className='object-cover h-[340px]' />
+                                <Image src={urlFor(serve.image).url()} alt={`${serve.title}`} width={700} height={600} className='object-cover h-[340px]' />
                               </div>
                             </div>
                             <div className="w-full  md:w-[41.666%] md:pl-[15px]">
-                              <ul className="relative w-full py-[10px] pr-[30px] pl-[20px] mb-9">
+                              <ul className="relative w-full py-[10px] pr-[30px] pl-[20px] mb-9 md:mt-0 mt-5">
                                 <li className='content-[] top-[0px] left-[4px] w-[1px] absolute dark:bg-white/[0.2] bg-black/[0.2] bottom-[-5px]' />
                                 {serve.points.map((point, index) => (
                                   <li className="border border-black/[0.09] dark:border-white/[0.05] text-ligthText dark:text-white w-full py-[15px] px-[20px] relative mx-0.5 bg-white dark:bg-black text-sm font-semibold  flex items-center mb-4" key={index}>
@@ -84,7 +71,9 @@ const Services = ({ experience }: Props) => {
                                 <p className='font-light py-4' key={index}>{bio.description}</p>
                               ))}
                             </div>
-                            <Link href={""} className='py-[8px] px-[26px] font-medium transition-all duration-200 ease-linear dark:text-white text-black dark:bg-blueColor bg-white border border-black/[0.2] dark:border-transparent rounded-sm hover:bg-amber-500 hover:text-dark'>View Details</Link>
+
+                            {/* Fix the link later */}
+                            <span className='py-[8px] w-auto px-[26px] font-medium transition-all duration-200 ease-linear dark:text-white text-black dark:bg-blueColor bg-white border border-black/[0.2] dark:border-transparent rounded-sm hover:text-dark'>View Details</span>
                             <div className="mt-[30px] w-full relative h-[1px] dark:bg-white/[0.1] bg-black/[0.1]" />
 
                           </div>
@@ -94,7 +83,7 @@ const Services = ({ experience }: Props) => {
                   ))}
                 </div>
               </div>
-              <div className="mt-[30px] w-full bg-blueColor py-[30px] px-[40px] relative overflow-hidden rounded-lg">
+              <div className="mt-[30px] w-full bg-blueColor py-[30px] md:px-[30px] px-[20px] lg:px-[40px] relative overflow-hidden rounded-lg">
                 <div className='absolute text-[#eee] top-[-30px] text-[50px] right-[20%] opacity-40 transform scale-[0.5] rotate-45 transition-all duration-300 bottom-0  ease-linear'>
                   <UserGroupIcon />
                 </div>

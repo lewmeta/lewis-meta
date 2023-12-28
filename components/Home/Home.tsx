@@ -14,8 +14,8 @@ const Home = ({ home }: Props) => {
                     <div className="w-full flex flex-wrap items-center" key={index}>
                         <div className="w-full pr-0 flex-grow-0 flex-shrink-0 basis-auto md:mb-0 min-h-96 mb-7">
                             <div className="w-full h-full relative flex items-center flex-wrap rounded-3xl z-10 group lg:h-[550px] ">
-                                <div className="lg:w-[33.333%] lg:order-1 order-2 w-full h-full rounded-3xl text-center flex-grow-0 flex-shrink-0 basis-auto bg-shadowImageDark items-center justify-center relative">
-                                    <Image src={urlFor(item.image).url()} width={800} height={800} alt='me' sizes="(max-width: 768px) 100vw, (max-width:1200px) 50vw 30vw, " priority className='transform grayscale-0 object-cover w-full lg:w-full lg:h-full h-[500px] lg:rounded-3xl' />
+                                <div className="lg:w-[33.333%] lg:order-1 order-2 w-full h-full rounded-3xl text-center flex-grow-0 flex-shrink-0 basis-auto bg-shadowImageDark items-center justify-center relative md:w-[70%] ">
+                                    <Image src={urlFor(item.image).url()} width={800} height={800} alt='me' sizes="(max-width: 768px) 100vw, (max-width:1200px) 50vw 30vw, " priority className='transform grayscale-0 object-cover w-full lg:w-full lg:h-full h-[450px] rounded-3xl' />
                                     {/* <Hireme /> */}
                                 </div>
                                 <div className="flex-grow-0 flex-shrink-0 basis-auto lg:w-[66.666%] w-full lg:order-2 order-1 z-20 lg:mb-0 mb-[50px] ">
@@ -28,7 +28,7 @@ const Home = ({ home }: Props) => {
 
                                         <div className="w-full flex gap-6 items-center mt-[30px] ">
                                             <Link href="/credential" className="py-[13px] px-[26px] w-auto bg-blueColor text-base text-white hover:bg-white hover:text-black border border-transparent hover:dark:bg-black hover:dark:border-white/[0.3] rounded-sm overflow-hidden  hover:dark:text-white  hover:border-black/[0.09] transition-all duration-300 ease-linear">More about me</Link>
-                                            <Link href={item.pdf} download={true} target={"_blank"} className="py-[13px] px-[26px] w-auto bg-blueColor text-base text-white ">Download CV</Link>
+                                            <Link href={item.pdf} download={true} target={"_blank"} className="py-[13px] px-[26px] w-auto bg-blueColor text-base text-white "> Download CV</Link>
                                         </div>
                                     </div>
                                 </div>

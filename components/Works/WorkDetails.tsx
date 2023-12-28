@@ -3,26 +3,28 @@ import Image from "next/image"
 import stars from "../../public/images/star.png"
 import projectDt1 from "../../public/images/project/project-dt-1.jpeg"
 import Layout from "../Layout"
+import urlFor from "@/lib/urlFor"
 
 type Props =  {
     project:Projects;
 }
 const WorkDetails = ({project}:Props) => {
+    console.log(project.singlePostInformations)
     return (
-        <section className="w-full pt-[80px]">
-            <Layout className="">
-                <p className="text-textDark opacity-70 mb-[40px]">BRANDING - RAVEN STUDIO</p>
+        <section className="w-full pt-[0px]">
+            <div className="">
+                <p className="dark:text-textDark text-ligthText opacity-70 mb-[40px] font-semibold">Project details - {project.title }</p>
                 <div className="relative flex items-center gap-5 mb-[30px] text-[56px] w-auto">
                     <Image src={stars} alt='start-img' priority sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," />
-                    <h1 className="text-[20px] leading-[26px] lg:text-[56px] text-dark dark:text-white md:text-[40px] md:leading-[55px] lg:leading-[65px] sm:text-[30px] sm:leading-[40px] uppercase font-semibold relative flex items-start justify-start">AESTHETIC DESIGN FOR BRAND NEW STARTUP.
+                    <h1 className="text-[20px] leading-[26px] lg:text-[56px] text-dark dark:text-white md:text-[40px] md:leading-[55px] lg:leading-[65px] sm:text-[30px] sm:leading-[40px] uppercase font-semibold relative flex items-start justify-start">{project.title}
                     </h1>
                     <Image src={stars} alt='start-img' priority width={60} height={60} className='overflow-hidden' />
                 </div>
-            </Layout>
-            <div className="sm:[350px] h-[250px] md:h-[400px] lg:h-[500px] w-full mb-[50px]">
-                <Image src={projectDt1} sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," alt="project1" className="w-full h-full object-cover" />
             </div>
-            <Layout>
+            <div className="sm:[350px] h-[250px] md:h-[400px] lg:h-[500px] w-full mb-[50px]">
+                <Image src={urlFor(project.mainImage).url()} width={800} height={600} sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," alt="project1" className="w-full h-full object-cover rounded-3xl" />
+            </div>
+            <div>
                 <div className="flex flex-wrap w-full relative md:p-[28] sm:p-6 p-0 lg:p-[36px] dark:bg-black bg-white rounded-3xl">
                     <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-25 z-10 dark:block hidden' />
                     <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-10 dark:block hidden opacity-10' />
@@ -58,7 +60,7 @@ const WorkDetails = ({project}:Props) => {
                         </div>
                     </div>
                 </div>
-            </Layout>
+            </div>
         </section>
     )
 }

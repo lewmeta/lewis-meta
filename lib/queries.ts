@@ -82,7 +82,7 @@ export const credentialsQuery = groq`*[_type == 'credentials']{
   "socials": socials[]->{
     url,
     platform,
-    "bioArray": bioArray[]->{
+    "bioArrays": bioArrays[]->{
         description,
         id,
     }

@@ -52,7 +52,7 @@ const Credentials = ({ credentials, skills, experience }: Props) => {
                     <div className="flex-grow-0 flex-shrink-0 w-full basis-auto lg:w-[calc(100%-380px)] lg:pl-14 relative">
                         <div className="w-full relative">
                             <div className="pb-[84px]">
-                                <h1 className="font-bold text-[35px] mb-12 w-full text-start dark:text-white text-black">More about <span className="text-blueColor">{item.name}</span></h1>
+                                <h1 className="font-bold lg:text-[35px] lg:leading-[43px] text-[28px] leading-[35px] mb-12 w-full text-start dark:text-white text-black">More about <span className="text-blueColor">{item.name}</span></h1>
                                 {item.bioArrays.map((bio, index) => (
                                     <p className="text-base font-light dark:text-white text-ligthText opacity-80 mb-7 " key={index}>{bio.description}</p>
                                 ))}

@@ -12,6 +12,8 @@ export const myStructure = (S) =>
                     S.list()
                         .title('Home Content')
                         .items([
+                            S.documentTypeListItem("navbar")
+                                .title('Create Navbar'),
                             S.documentTypeListItem("home")
                                 .title('Create Home Page'),
                         ])
@@ -62,6 +64,8 @@ export const myStructure = (S) =>
                     S.list()
                         .title('My Services')
                         .items([
+                            S.documentTypeListItem("serviceHeader")
+                                .title('Create Header'),
                             S.documentTypeListItem("myservices")
                                 .title('Create Services'),
                         ])

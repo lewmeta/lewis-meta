@@ -73,7 +73,7 @@ const Works = ({ project }: Props) => {
                       </div>
                       <div className="flex items-center justify-between gap-4">
                         <span className={"text-dark dark:text-white w-6 h-6 "}>
-                          <Link href={""}>
+                          <Link href={`${item.githubLink}`}>
                             <GithubIcon className={""} />
                           </Link>
                         </span>

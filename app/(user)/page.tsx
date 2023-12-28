@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
       <TransitionEffect />
-      <main className='w-full pt-16'>
+      <main className='w-full lg:pt-16'>
         <Layout className='h-full'>
           <Home home={home}/>
           {/* <AboutIntro /> */}
