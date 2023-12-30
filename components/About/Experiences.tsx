@@ -35,7 +35,7 @@ const Experiences = ({experience}:Props) => {
     )
   return (
     <div className="w-full">
-        <h1 className="font-bold text-[35px] mb-12 w-full text-start dark:text-white text-black">Experience</h1>
+        <h1 className="font-bold text-[35px] mb-12 w-full text-start dark:text-white text-black">My Experience</h1>
         <div ref={ref} className="w-full mx-auto relative">
             <motion.div 
             style={{scaleY: scrollYProgress}}

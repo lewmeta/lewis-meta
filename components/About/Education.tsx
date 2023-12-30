@@ -4,6 +4,9 @@ import React, { useRef } from 'react'
 import {motion, useScroll } from "framer-motion";
 import LiIcon from './LiIcon';
 
+type Props = {
+    education: Educations[];
+}
 
 const Details = ({type, time, place, info}:any) => {
     const ref = useRef(null);
@@ -23,7 +26,7 @@ const Details = ({type, time, place, info}:any) => {
     )
 }
 
-const Education = () => {
+const Education = ({education}:Props) => {
 
     const ref = useRef(null);
     const {scrollYProgress} = useScroll(
@@ -40,7 +43,16 @@ const Education = () => {
             style={{scaleY: scrollYProgress}}
             className="absolute left-9 top-0 w-[4px] h-full bg-dark dark:bg-blueColor origin-top"/>
             <ul className="w-full flex flex-col items-start justify-between ml-4">
-                <Details
+                {education.map((item, index) => (
+                    <Details
+                    type={item.course} 
+                    time={item.date}
+                    place={item.institution}
+                    info={item.description}
+                    key={index}
+                    />
+                ))}
+                {/* <Details
                 type={"Bachelor Of Science In Computer Science"} company={"Google"}
                 time={"2016-2020"}
                 place={"Massachusetts Institute Of Technology (MIT)"}
@@ -57,13 +69,7 @@ const Education = () => {
                 time={"2016-2020"}
                 place={"Massachusetts Institute Of Technology (MIT)"}
                 info={"Relevant courses included Data Structures and Algorithms, Computer Systems Engineering Artificial Intelligence."}
-                />
-                <Details
-                type={"Bachelor Of Science In Computer Science"} company={"Google"}
-                time={"2016-2020"}
-                place={"Massachusetts Institute Of Technology (MIT)"}
-                info={"Relevant courses included Data Structures and Algorithms, Computer Systems Engineering Artificial Intelligence."}
-                />
+                /> */}
             </ul>
         </div>
     </div>

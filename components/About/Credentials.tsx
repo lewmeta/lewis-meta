@@ -1,12 +1,12 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { GithubIcon, InstagramIcon, TwitterIcon2, TwitterXIcon } from "../Icon"
+import { TwitterXIcon } from "../Icon"
 import Skills from "./Skills"
 import Experiences from "./Experiences"
 import Education from "./Education"
 import urlFor from "@/lib/urlFor"
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitch, FaTwitter, FaYoutube } from "react-icons/fa"
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitch, FaYoutube } from "react-icons/fa"
 
 type Props = {
     credentials: Credentials[];
@@ -14,7 +14,7 @@ type Props = {
     education: Educations[];
     experience: Experience[]
 }
-const Credentials = ({ credentials, skills, experience }: Props) => {
+const Credentials = ({ credentials, skills, experience, education }: Props) => {
     return (
         <section className="w-full pt-20">
             {credentials.map((item, index) => (
@@ -30,7 +30,7 @@ const Credentials = ({ credentials, skills, experience }: Props) => {
                                 </div>
                                 <h1 className="text-ligthText dark:text-white font-medium text-[26px] mb-3">{item.name}</h1>
                                 <Link href={item.link} target="_blank" className="dark:dark:text-textDark text-ligthText/70 hover:text-blueColor transition-all duration-300 ease-in dark:opacity-60 text-sm mb-6">{item.handle}</Link>
-                               
+
                                 <ul className="gap-2 flex mb-[36px] relative z-20 justify-center">
                                     {item.socials?.map((social, index) => (
                                         <li key={index} className="mr-2 w-[40px] h-[40px] flex ">
@@ -56,16 +56,14 @@ const Credentials = ({ credentials, skills, experience }: Props) => {
                                 {item.bioArrays.map((bio, index) => (
                                     <p className="text-base font-light dark:text-white text-ligthText opacity-80 mb-7 " key={index}>{bio.description}</p>
                                 ))}
-                                {/* <p className="text-base font-light dark:text-white text-ligthText opacity-80 mb-7 ">I believe that design is about more than just making things look pretty – it&apos;s about solving problems and creating intuitive, enjoyable experiences for users.</p>
-                                <p className="text-base font-light dark:text-white text-ligthText opacity-80 mb-7 ">Whether I&apos;m working on a website, mobile app, or other digital product, I bring my commitment to design excellence and user-centered thinking to every project I work on. I look forward to the opportunity to bring my skills and passion to your next project.</p> */}
                             </div>
-                            <div className="">
+                            <div >
                                 <Experiences experience={experience} />
                             </div>
-                            <div className="">
-                                <Education />
+                            <div >
+                                <Education education={education} />
                             </div>
-                            <div className="">
+                            <div >
                                 <Skills skills={skills} />
                             </div>
                         </div>

@@ -18,7 +18,7 @@ const Blog = ({ post }: Props) => {
             </div>
             <div className="w-full flex flex-wrap">
                 <div className="lg:w-[75%] w-full">
-                    <div className="flex flex-wrap gap-5 w-full">
+                    <div className="flex flex-wrap gap-12 w-full">
                         {post.map((item, index) => (
                             <div className="w-full lg:pr-6 mb-10 lg:mb-0" key={index}>
                                 <div className="w-full group transition-all duration-300 ease-linear  rounded-md overflow-hidden">
@@ -59,7 +59,7 @@ const Blog = ({ post }: Props) => {
                 <div className="lg:w-[25%] w-full">
                     <div className="p-[20px] w-full overflow-hidden rounded-md border dark:border-white/[0.2] border-dark/[0.2] sticky top-[20%]">
                         {firstPost.map((item, index) => (
-                            <div className="block space-y-[30px]" key={index}>
+                            <div className="block space-y-[10px]" key={index}>
                                 <div className="className='relative flex items-center justify-center p-[30px] rounded-[5px] w-full ">
                                     {item.authors.map((author, index) => (
                                         <div className="w-full flex flex-col items-center justify-center h-full" key={index}>
@@ -67,8 +67,8 @@ const Blog = ({ post }: Props) => {
                                                 <Image src={urlFor(author.image).url()} alt='author' width={200} height={200} className='w-[100px] h-[100px] mx-auto object-cover rounded-full' />
                                             </div>
                                             <div className="w-full h-full mt-6 mx-auto text-center">
-                                                <h4 className="text-[20px] font-semibold font-lex ">{author.name}</h4>
-                                                <p className="text-primaryText font-light ">{author.description}</p>
+                                                <h4 className="text-[20px] font-semibold dark:text-white text-ligthText font-lex mb-2 ">{author.name}</h4>
+                                                <p className="text-primaryText font-light dark:text-textDark mb-2 ">{author.description}</p>
                                             </div>
                                             <div className="">
                                                 <ul className="w-full h-full flex mt-2">
