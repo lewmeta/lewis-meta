@@ -8,7 +8,7 @@ export const navbarQuery = groq`*[_type == 'navbar']{
     "socials": socials[]->{
         platform,
         url,
-    }
+    },
 }`;
 
 // Get all posts
