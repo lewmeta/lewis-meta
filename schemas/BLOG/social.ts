@@ -16,6 +16,7 @@ export default defineType( {
                 { title: 'Instagram', value: 'instagram' },
                 { title: 'LinkedIn', value: 'linkedin' },
                 { title: 'Youtube', value: 'youtube' },
+                { title: 'Github', value: 'github' },
               ],
             },
             validation: (Rule) => Rule.required(),

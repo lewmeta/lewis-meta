@@ -32,9 +32,15 @@ const Works = ({ project }: Props) => {
                       </div>
                       <div className="flex items-center justify-between gap-4">
                         <span className={"text-dark dark:text-white w-6 h-6 "}>
-                          <Link href={""}>
-                            <GithubIcon className={""} />
-                          </Link>
+                          {item.githubLink ? (
+                            <Link href={`${item.githubLink}`}>
+                              <GithubIcon className={""} />
+                            </Link>
+                          ) : (
+                            <Link href={`/works/work-details/${item.slug.current}`}>
+                              <GithubIcon className={""} />
+                            </Link>
+                          )}
                         </span>
                         <div className="py-2 sm:py-[10px] px-[20px] text-light rounded-md hover:bg-white hover:text-dark transition-all duration-300 ease-in border border-solid border-transparent hover:border-dark/10 bg-dark dark:bg-white dark:text-dark hover:dark:text-white hover:dark:bg-black hover:dark:border-white/30 ">
                           <Link href={`/works/work-details/${item.slug.current}`} className='bg-none outline-none md:text-sm text-xs border-none visited:outline-none visited:border-none visited:bg-transparent hover:bg-transparen w-full'>View Project</Link>
@@ -67,21 +73,27 @@ const Works = ({ project }: Props) => {
                         <Image src={urlFor(item.mainImage).url()} width={800} height={800} sizes="(max-width: 768px) 100vw, (max-width:1200px) 100vw, " alt='project1' className='object-cover w-full h-full' />
                       </div>
                       <div className="z-20 w-full">
-                      <h1 className='text-xl dark:text-white opacity-90 font-medium'>{item.title}</h1>
-                      <p className='dark:text-[#bcbcbc] text-dark/80 opacity-50 text-sm  mb-0.5'>{item.description}</p>
-                      <div className="flex items-center justify-between flex-wrap gap-4 md:gap-0 w-full mt-4">
-                      </div>
-                      <div className="flex items-center justify-between gap-4">
-                        <span className={"text-dark dark:text-white w-6 h-6 "}>
-                          <Link href={`${item.githubLink}`}>
-                            <GithubIcon className={""} />
-                          </Link>
-                        </span>
-                        <div className="py-2 sm:py-[10px] px-[20px] text-light rounded-md hover:bg-white hover:text-dark transition-all duration-300 ease-in border border-solid border-transparent hover:border-dark/10 bg-dark dark:bg-white dark:text-dark hover:dark:text-white hover:dark:bg-black hover:dark:border-white/30 ">
-                          <Link href={`/works/work-details/${item.slug.current}`} className='bg-none outline-none md:text-sm text-xs border-none visited:outline-none visited:border-none visited:bg-transparent hover:bg-transparen w-full'>View Project</Link>
+                        <h1 className='text-xl dark:text-white opacity-90 font-medium'>{item.title}</h1>
+                        <p className='dark:text-[#bcbcbc] text-dark/80 opacity-50 text-sm  mb-0.5'>{item.description}</p>
+                        <div className="flex items-center justify-between flex-wrap gap-4 md:gap-0 w-full mt-4">
+                        </div>
+                        <div className="flex items-center justify-between gap-4">
+                          <span className={"text-dark dark:text-white w-6 h-6 "}>
+                            {item.githubLink ? (
+                              <Link href={`${item.githubLink}`}>
+                                <GithubIcon className={""} />
+                              </Link>
+                            ) : (
+                              <Link href={`/works/work-details/${item.slug.current}`}>
+                                <GithubIcon className={""} />
+                              </Link>
+                            )}
+                          </span>
+                          <div className="py-2 sm:py-[10px] px-[20px] text-light rounded-md hover:bg-white hover:text-dark transition-all duration-300 ease-in border border-solid border-transparent hover:border-dark/10 bg-dark dark:bg-white dark:text-dark hover:dark:text-white hover:dark:bg-black hover:dark:border-white/30 ">
+                            <Link href={`/works/work-details/${item.slug.current}`} className='bg-none outline-none md:text-sm text-xs border-none visited:outline-none visited:border-none visited:bg-transparent hover:bg-transparen w-full'>View Project</Link>
+                          </div>
                         </div>
                       </div>
-                    </div>
                     </div>
                   </div>
                 ))}

@@ -32,6 +32,12 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'liveSite',
+      title: 'Live Site link for this project',
+      description: 'Give a live site for this project',
+      type: 'string',
+    }),
+    defineField({
       name: 'authors',
       title: 'Authors',
       type: 'array',
@@ -49,6 +55,21 @@ export default defineType({
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
     }),
+    defineField({
+      name: 'bioArrays',
+      title: 'Create arrays here for the project',
+      description: 'Create arrays here for the project to give more information',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'bioArray'}}],
+    }),
+    defineField({
+      name: 'imageArrays',
+      title: 'Create arrays for the Image',
+      description: 'Create arrays here for the project images to give more information',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'imageArray'}}],
+    }),
+
     defineField({
       name: 'mainImage',
       title:'Main image',

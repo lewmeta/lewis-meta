@@ -17,7 +17,6 @@ const Services = ({ experience }: Props) => {
     setSelectedCategory(category);
   };
 
-  console.log("Services:", experience)
   return (
     <>
       <section className='mt-[50px] text-white'>
@@ -60,7 +59,7 @@ const Services = ({ experience }: Props) => {
                                   </li>
                                 ))}
                               </ul>
-                              <span className="shadow-main rounded-sm text-white bg-blueColor relative mt-[20px] py-[12px] px-[25px]">{serve.price}</span>
+                              <Link href="/contact" className="shadow-main hover:bg-transparent border  border-transparent hover:border-black/[0.09] hover:dark:border-white/[0.09] dark:border  rounded-sm text-white bg-blueColor relative mt-[20px] py-[12px] px-[25px] hover:text-black hover:dark:text-white transition-all duration-300 ease-in">Contact for prizing</Link>
                             </div>
                           </div>
                           <div className="mt-[50px]">

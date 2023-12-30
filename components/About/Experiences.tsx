@@ -3,6 +3,9 @@ import React, { useRef } from 'react'
 import {motion, useScroll } from "framer-motion";
 import LiIcon from './LiIcon';
 
+type Props = {
+    experience: Experience[];
+}
 const Details = ({position, company, companyLink, time, address, work}:any) => {
     const ref = useRef(null);
     return (
@@ -21,7 +24,7 @@ const Details = ({position, company, companyLink, time, address, work}:any) => {
     )
 }
 
-const Experiences = () => {
+const Experiences = ({experience}:Props) => {
 
     const ref = useRef(null);
     const {scrollYProgress} = useScroll(
@@ -39,36 +42,15 @@ const Experiences = () => {
             className="absolute left-9 top-0 w-[4px] h-full bg-dark dark:bg-blueColor origin-top"/>
 
             <ul className="w-full flex flex-col items-start justify-between ml-4">
+                {experience.map((item, index) =>(
                 <Details
-                position={"Software Engineer"} company={"Google"}
-                companyLink={"https://instagram.com"}
-                time={"2022-Present"} address={"Mountain View, CA"}
-                work={"Worked on a team responsible for developing new features for Google's search engine including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."}
+                key={index}
+                position={item.jobTitle} company={item.companyName}
+                companyLink={`${item.companyLink}`}
+                time={item.date} address={item.location}
+                work={item.description}
                 />
-                <Details
-                position={"Software Engineer"} company={"Google"}
-                companyLink={"https://instagram.com"}
-                time={"2022-Present"} address={"Mountain View, CA"}
-                work={"Worked on a team responsible for developing new features for Google's search engine including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."}
-                />
-                <Details
-                position={"Software Engineer"} company={"Google"}
-                companyLink={"https://instagram.com"}
-                time={"2022-Present"} address={"Mountain View, CA"}
-                work={"Worked on a team responsible for developing new features for Google's search engine including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."}
-                />
-                <Details
-                position={"Software Engineer"} company={"Google"}
-                companyLink={"https://instagram.com"}
-                time={"2022-Present"} address={"Mountain View, CA"}
-                work={"Worked on a team responsible for developing new features for Google's search engine including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."}
-                />
-                <Details
-                position={"Software Engineer"} company={"Google"}
-                companyLink={"https://instagram.com"}
-                time={"2022-Present"} address={"Mountain View, CA"}
-                work={"Worked on a team responsible for developing new features for Google's search engine including improving the accuracy and relevance of search results and developing new tools for data analysis and visualization."}
-                />
+                ))}
             </ul>
         </div>
     </div>

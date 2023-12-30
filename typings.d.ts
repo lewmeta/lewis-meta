@@ -28,18 +28,30 @@ interface Post extends Base {
     views: number; // new field added here
     singlePostInformations: [SinglePostInformation];
 }
+
+interface ImageArray {
+    id: number,
+    image: string;
+}
+// NAVBAR
+interface Navbar {
+    logo: string;
+    socials: Socials[];
+    githubLink: string;
+}
 interface Projects extends Base {
     authors: Author[];
     body: Block[];
     categories: Category[];
+    imageArrays: ImageArray[];
+    bioArrays: BioArray[];
     mainImage: Image;
     slug: slug;
     githubLink: string;
+    liveSite: string;
     title: string;
     description: slug;
     tags: Tag[];
-    views: number; // new field added here
-    singlePostInformations: [SinglePostInformation];
 }
 
 interface Tag {
@@ -53,7 +65,7 @@ interface Category extends Base {
 
 interface Socials {
     // add more social media platforms as needed
-    platform: 'twitter' | 'instagram' | 'facebook' | 'linkedin' | 'youtube' | 'twitch';
+    platform: 'twitter' | 'instagram' | 'facebook' | 'linkedin' | 'youtube' | 'twitch' | 'github';
     url: string;
 }
 
@@ -100,6 +112,7 @@ interface Story {
     title: string;
     description: string;
     subtitle: string;
+    date: string;
     points: Point[];
 }
 interface Point {
@@ -118,12 +131,14 @@ interface Credentials {
 
 interface BioArray {
     id: number;
+    title?: string;
     description: string;
 }
 
 interface Experience {
     jobTitle: string;
     companyLink: string;
+    companyName: string;
     date: string;
     location: string;
     description: string;
@@ -161,4 +176,17 @@ interface ServiceInfo {
 interface ServiceTitle {
     title: string;
     id: number;
+}
+
+// Contact
+
+interface ContactInfo {
+    subtitle: string;
+    description: string;
+    title: string;
+}
+interface InfoTimesQuery {
+    title: string;
+    description: string;
+    socials : Socials[];
 }

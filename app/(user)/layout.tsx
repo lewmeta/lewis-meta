@@ -5,6 +5,11 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Provider from '@/components/Hooks/Provider'
 import AnimatePresenc from '@/components/AnimatePresence'
+import NavFetch from '@/components/Home/navFetch'
+import FooterFetch from '@/components/Home/footerFetch'
+import 'react-toastify/dist/ReactToastify.css';
+
+import { ToastContainer } from 'react-toastify'
 
 const lexend_deca = Lexend_Deca({
   subsets: ['latin'],
@@ -23,10 +28,8 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: 'Lewis Meta | Portfolio website',
   description: 'Welcome to my portfolio website. Lets work together',
-  generator: 'Next.js',
-  applicationName: 'Next.js',
   referrer: 'origin-when-cross-origin',
-  keywords: ['Next.js', 'React', 'JavaScript'],
+  keywords: ['lewis', 'meta', 'lewismeta', 'lewisonyango'],
   authors: [{ name: 'Lewis' }, { name: 'Meta', url: 'https://lewmeta.vercel.com' }],
   creator: 'Lewis Meta',
   publisher: 'Lewis Meta',
@@ -34,7 +37,7 @@ export const metadata: Metadata = {
     type: 'website',
     url: 'https://lewmeta.vercel.com',
     title: 'Lewis Meta Portfolio',
-    description: 'Welcome to my portfolio website. Lets work together',
+    description: "Welcome to my portfolio website. Let's connect",
     siteName: 'Lew Meta',
     images: [
       {
@@ -62,13 +65,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${caveat.variable} ${lexend_deca.variable} font-lex bg-lightBlue dark:bg-black dark:text-primaryText text-dark leading-5 scroll-smooth text-sm font-normal`}>
         <Provider>
-          <Navbar />
+          <NavFetch />
           <AnimatePresenc>
             <main >
               {children}
+              <ToastContainer position="top-right" />
             </main>
           </AnimatePresenc>
-          <Footer />
+          <FooterFetch />
         </Provider>
       </body>
     </html>

@@ -45,7 +45,7 @@ const transporter = nodemailer.createTransport({
         });
         return res
           .status(200)
-          .json({ message: "Success: Message sent" });
+          .json({ message: "Your message has been successfully sent" });
       } catch (error) {
         return res.status(400).json({
           message: `Failed: ${error.message}`,

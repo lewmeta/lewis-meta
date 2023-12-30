@@ -63,7 +63,10 @@ import myservices from './New/myservices'
 import serviceTitle from './New/serviceTitle'
 import serviceInfo from './New/serviceInfo'
 import bioArray from './New/bioArray'
-import serviceHeader from './SERVICES/serviceHeader'
 import navbar from './New/navbar'
+import contactInfo from './New/contactInfo'
+import infoTimes from './New/infoTimes'
+import imageArray from './New/imageArray'
+import serviceHeader from './New/serviceHeader'
 
-export const schemaTypes = [navbar, serviceHeader, bioArray, myservices, serviceTitle, serviceInfo, skills, experience, education, credentials, point, story, mystory, achievements, aboutIntro, home, project, video, contactHeader, blogHeader, post, author, category, tag, blockContent, social, postTags, blogDetails]
+export const schemaTypes = [imageArray, infoTimes, contactInfo, navbar, serviceHeader, bioArray, myservices, serviceTitle, serviceInfo, skills, experience, education, credentials, point, story, mystory, achievements, aboutIntro, home, project, video, contactHeader, blogHeader, post, author, category, tag, blockContent, social, postTags, blogDetails]

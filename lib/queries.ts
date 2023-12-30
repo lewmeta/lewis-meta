@@ -3,6 +3,15 @@ import { groq } from "next-sanity";
 
 
 // Get all posts
+export const navbarQuery = groq`*[_type == 'navbar']{
+    ...,
+    "socials": socials[]->{
+        platform,
+        url,
+    }
+}`;
+
+// Get all posts
 export const postQuery = groq`*[_type == 'post']{
     ...,
     "tags": tags[]-> {
@@ -12,6 +21,7 @@ export const postQuery = groq`*[_type == 'post']{
     "authors": authors[]->{
       name, 
       image,
+      description,
       "socials": socials[]->{
           platform,
           url
@@ -67,6 +77,7 @@ export const experienceQuery = groq`*[_type == 'mystory']{
     title, 
     description,
     subtitle,
+    date,
     "points": points[]->{
         title,
         id,
@@ -82,11 +93,11 @@ export const credentialsQuery = groq`*[_type == 'credentials']{
   "socials": socials[]->{
     url,
     platform,
-    "bioArrays": bioArrays[]->{
-        description,
-        id,
-    }
   },
+  "bioArrays": bioArrays[]->{
+    description,      
+    id,
+  }
 
 } | order(_createdAt desc)`;
 
@@ -128,3 +139,20 @@ export const servicesQuery = groq`*[_type == 'myservices']{
     },
 
 } | order(_createdAt desc)`;
+
+export const servicesHeaderQuery = groq`*[_type == 'serviceHeader']{
+  ...,
+}`;
+
+
+// CONTACT ME
+export const contactInfoQuery = groq`*[_type == 'contactInfo']{
+  ...,
+}`;
+export const infoTimesQuery = groq`*[_type == 'infoTimes']{
+  ...,
+  "socials": socials[]->{
+    url,
+    platform,
+  },
+}`;

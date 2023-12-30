@@ -18,6 +18,12 @@ export default defineType({
             type: "string"
         }),
         defineField({
+            name: "companyName",
+            title: "Company name",
+            description: "Give a company name!",
+            type: "string"
+        }),
+        defineField({
             name: "date",
             title: "Start & end-date | present",
             description: "Give start and end date or present",

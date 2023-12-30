@@ -87,8 +87,10 @@ export const myStructure = (S) =>
                     S.list()
                         .title('Contact Information')
                         .items([
-                            // S.documentTypeListItem("contactInfo")
-                            //     .title('Contact Info '),
+                            S.documentTypeListItem("contactInfo")
+                                .title('Create yr Info'),
+                            S.documentTypeListItem("infoTimes")
+                                .title('Create More Infos'),
                             // S.documentTypeListItem("contactMap")
                             //     .title('Contact Map'),
                         ])

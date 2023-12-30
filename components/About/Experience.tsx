@@ -27,7 +27,7 @@ const Experience = ({ experience }: Props) => {
                                             <div className=" w-[56px] h-[46px] rounded-sm  bg-blueColor flex items-center justify-center text-white webkitShadow p-2 text-2xl"><FaGraduationCap /></div>
                                             <div className="pl-4 w-full ">
                                                 <h1 className="font-semibold text-lg dark:text-white text-black  ">{story.title}</h1>
-                                                <span className="text-[#999] text-sm uppercase mt-[20px]"> 2012-2017</span>
+                                                <span className="text-[#999] text-sm uppercase mt-[20px]"> {story.date}</span>
                                             </div>
                                         </div>
                                         <div className="mt-[50px] relative w-full  ml-[-10px]">

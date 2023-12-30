@@ -2,7 +2,10 @@ import React from 'react'
 import Layout from './Layout'
 import Link from 'next/link'
 
-const Footer = () => {
+type Props = {
+  navquery: Navbar[]
+}
+const Footer = ({navquery}:Props) => {
   return (
     <footer className='pt-32 pb-20'>
       <Layout className=''>
@@ -24,12 +27,14 @@ const Footer = () => {
               <Link href={"/contact"} className='text-xs uppercase  hover:dark:text-light hover:text-blueColor transition-all duration-300 font-semibold -tracking-tighter  ease-in decoration-transparent '>Contact</Link>
             </li>
           </ul>
-          <p className="text-primaryText text-sm font-medium">
+          {navquery.map((item, index) => (
+          <p className="text-primaryText text-sm font-medium" key={index}>
             &copy; 2023 All rights reserved by
             <span className="text-blueColor transition-all duration-300 ease-in hover:dark:text-light hover:text-blueColor ml-1">
-              <Link href={""} >Lewis Meta</Link>
+              <Link href={`${item.githubLink}`} >@lewismeta</Link>
             </span>
           </p>
+          ))}
         </div>
       </Layout>
     </footer>
