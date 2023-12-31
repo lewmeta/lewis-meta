@@ -68,5 +68,6 @@ import contactInfo from './New/contactInfo'
 import infoTimes from './New/infoTimes'
 import imageArray from './New/imageArray'
 import serviceHeader from './New/serviceHeader'
+import myCodeFields from './New/myCodeFields'
 
-export const schemaTypes = [imageArray, infoTimes, contactInfo, navbar, serviceHeader, bioArray, myservices, serviceTitle, serviceInfo, skills, experience, education, credentials, point, story, mystory, achievements, aboutIntro, home, project, video, contactHeader, blogHeader, post, author, category, tag, blockContent, social, postTags, blogDetails]
+export const schemaTypes = [myCodeFields, imageArray, infoTimes, contactInfo, navbar, serviceHeader, bioArray, myservices, serviceTitle, serviceInfo, skills, experience, education, credentials, point, story, mystory, achievements, aboutIntro, home, project, video, contactHeader, blogHeader, post, author, category, tag, blockContent, social, postTags, blogDetails]

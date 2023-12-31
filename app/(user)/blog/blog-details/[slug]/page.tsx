@@ -65,7 +65,15 @@ export default async function Page({ params: { slug }, }: Props) {
       }
     },
     "postTags": postTags[]->{title,slug },
-    "categories": categories[]->{title,number}
+    "categories": categories[]->{title,number},
+    "myCodeField": myCodeField { // Fetch the codeContent field
+        language,
+        code,
+        filename
+    },
+    "codeInput": codeInput[]->{
+         ...,
+    },
   }`;
 
     const post: Post = await client.fetch(query, { slug })
@@ -79,7 +87,7 @@ export default async function Page({ params: { slug }, }: Props) {
             <TransitionEffect />
             <main className='w-full min-h-screen pt-16'>
                 <Layout className='h-full'>
-                    <BlogDetails post={post} posts={posts}/>
+                    <BlogDetails post={post} posts={posts} />
                 </Layout>
             </main>
         </>

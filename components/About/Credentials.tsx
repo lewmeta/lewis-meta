@@ -33,7 +33,7 @@ const Credentials = ({ credentials, skills, experience, education }: Props) => {
 
                                 <ul className="gap-2 flex mb-[36px] relative z-20 justify-center">
                                     {item.socials?.map((social, index) => (
-                                        <li key={index} className="mr-2 w-[40px] h-[40px] flex ">
+                                        <li key={index} className="mr-0 w-[40px] h-[40px] flex ">
                                             <Link href={social.url} rel="noreferrer noopener" target="_blank" className={`${social.platform === "facebook" ? "!bg-blue-800" : ""} ${social.platform === "instagram" ? "!bg-[#F56040] " : ""}  ${social.platform === "linkedin" ? "!bg-blue-400" : ""} ${social.platform === "twitter" ? "hover:bg-blue-600" : "bg-blue-600"}  ${social.platform === "youtube" ? "!bg-[#c4302b]" : ""} ${social.platform === "twitch" ? "!bg-[#6441A4]" : ""} bg-yellowColor  text-white cursor-pointer w-full h-full flex items-center justify-center z-[1] rounded-full text-lg`}>
                                                 {social.platform === "facebook" && <FaFacebookF className="" />}
                                                 {social.platform === "instagram" && <FaInstagram />}

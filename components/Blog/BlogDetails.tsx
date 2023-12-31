@@ -3,33 +3,38 @@ import Image from "next/image"
 import urlFor from "@/lib/urlFor"
 import { RichTextComponent } from "../RichTextComponent"
 import { PortableText } from "@portabletext/react"
+import Refractor from 'react-refractor'
+import js from 'refractor/lang/javascript'
+import Highlight from 'prism-react-renderer';
+import Prism from "prismjs";
+import "prismjs/themes/prism-tomorrow.css";
+
 
 
 type Props = {
     post: Post;
     posts: Post[];
 }
+Refractor.registerLanguage(js)
 
 const BlogDetails = ({ post, posts }: Props) => {
+    console.log("BLOGS", post.codeInput)
     return (
         <section className="w-full">
-            <div className="w-full dark:text-textDark dark:opacity-70 text-ligthText/90 mb-6 flex items-center">
+            {/* <div className="w-full dark:text-textDark dark:opacity-70 text-ligthText/90 mb-6 flex items-center">
                 <Link href={"/"} className="uppercase opacity-100">Home</Link>
                 <p className="pl-3 uppercase">- My published articles</p>
-            </div>
+            </div> */}
             <h1 className="lg:text-[56px] lg:leading-[70px] md:text-[46px] md:leading-[60px] sm:text-[35px] sm:leading-[45px] text-[28px] leading-[35px] relative mb-7 font-semibold gap-6 dark:text-white text-ligthText flex items-center lg:w-[85%] w-full">
-                {/* <Image src={stars} alt='start-img' priority sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," /> */}
-                {post.title}.
-                {/* <Image src={stars} alt='start-img' priority sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," className="flex justify-start" /> */}
+                {post.title}
             </h1>
             <div className="flex flex-wrap w-full md:pt-[60px] pt-[30px] lg:pt-[40px]">
-                <div className="lg:w-[66.6667%] w-full lg:pr-[85px] mb-10 lg:mb-0">
-                    <div className="w-full h-[400px] mb-[70px] overflow-hidden relative">
-                        {/* <Link href={"/blog/blog-details/1"} className="absolute top-0 left-0 w-full h-full" /> */}
+                <div className="lg:w-[66.6667%] w-full lg:pr-[55px] mb-10 lg:mb-0 ">
+                    <div className="w-full md:h-[300px] sm:h-[250px] h-[200px] lg:h-[400px] mb-[70px] overflow-hidden relative rounded-3xl">
                         <Image src={urlFor(post.mainImage).url()} alt='start-img' priority width={800} height={800} sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," className="w-full h-full object-cover" />
                     </div>
                     <div className="w-full flex items-center text-blueColor text-base font-normal leading-[16.8px] mb-8 gap-1">
-                        June 9, 2023 -
+                        {new Date(post._createdAt).toLocaleDateString('en-US', { month: 'long', year: 'numeric', weekday: 'long' })} -
                         <ul className="">
                             {post.categories.map((item, index) => (
                                 <li className="text-primaryText font-semibold break-words w-full" key={index}>
@@ -39,21 +44,31 @@ const BlogDetails = ({ post, posts }: Props) => {
                         </ul>
                     </div>
                     <PortableText value={post.body} components={RichTextComponent} />
-                    <ul className="mb-7">
-                        <li className="dark:text-textDark text-ligthText/70 text-base mb-6 leading-6">- Pretty merits waited six</li>
-                        <li className="dark:text-textDark text-ligthText/70 text-base mb-6 leading-6">– General few civilly amiable pleased account carried.</li>
-                        <li className="dark:text-textDark text-ligthText/70 text-base mb-6 leading-6">– Continue indulged speaking</li>
-                        <li className="dark:text-textDark text-ligthText/70 text-base mb-6 leading-6">– Narrow formal length my highly</li>
-                        <li className="dark:text-textDark text-ligthText/70 text-base mb-6 leading-6">– Occasional pianoforte alteration unaffected impossible</li>
-                    </ul>
-                    <p className="text-base leading-6 dark:text-white text-ligthText opacity-80 mb-7 font-light">Surrounded to me occasional pianoforte alteration unaffected impossible ye. For saw half than cold. Pretty merits waited.</p>
-                    <ul className="">
-                        {post.categories.map((item, index) => (
-                            <li className="" key={index}>
-                                <span className='py-3 w-auto px-5 font-normal rounded-2xl text-xs mr-1.5 mt-3 capitalize bg-dark text-white'>{item.title}</span>
-                            </li>
-                        ))}
-                    </ul>
+                    <p className='mt-8'>
+                        {post.myCodeField.filename}
+                    </p>
+                    {post.myCodeField.language && post.myCodeField.language && (
+
+                    <Refractor
+                        language={post.myCodeField?.language}
+                        value={post.myCodeField.code}
+                    />
+                    )}
+                    {post.codeInput.map((codex, index) => (
+                        <div className="mt-7" key={index}>
+                            <PortableText value={codex.body} components={RichTextComponent} />
+
+                            {codex.language && (
+                                <Refractor
+                                    language={'javascript'}
+                                    value={codex.code}
+                                />
+
+                            )}
+                        </div>
+
+                    ))}
+
                     <div className="mt-[70px] py-9 lg:px-11 md:px-8 px-5 flex-wrap rounded-3xl bg-white dark:bg-black relative w-full">
                         <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-10 z-10' />
                         <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30 -m-0.5 opacity-50' />
@@ -80,7 +95,7 @@ const BlogDetails = ({ post, posts }: Props) => {
                 </div>
 
                 <div className="lg:w-[33.3333%] w-full">
-                    <div className="w-full relative">
+                    <div className="w-full sticky top-[20%]">
                         <div className="mb-10 relative w-full dark:bg-black rounded-3xl pt-[46px] pr-[30px] pb-[62px] pl-[30px] bg-white">
                             <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-25 z-10' />
                             <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30' />

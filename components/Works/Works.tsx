@@ -33,11 +33,11 @@ const Works = ({ project }: Props) => {
                       <div className="flex items-center justify-between gap-4">
                         <span className={"text-dark dark:text-white w-6 h-6 "}>
                           {item.githubLink ? (
-                            <Link href={`${item.githubLink}`}>
+                            <Link href={`${item.githubLink}`} target='_blank'>
                               <GithubIcon className={""} />
                             </Link>
                           ) : (
-                            <Link href={`/works/work-details/${item.slug.current}`}>
+                            <Link href={`/works/work-details/${item.slug.current}`} target='_blank'>
                               <GithubIcon className={""} />
                             </Link>
                           )}
@@ -80,11 +80,11 @@ const Works = ({ project }: Props) => {
                         <div className="flex items-center justify-between gap-4">
                           <span className={"text-dark dark:text-white w-6 h-6 "}>
                             {item.githubLink ? (
-                              <Link href={`${item.githubLink}`}>
+                              <Link href={`${item.githubLink}`} target='_blank'>
                                 <GithubIcon className={""} />
                               </Link>
                             ) : (
-                              <Link href={`/works/work-details/${item.slug.current}`}>
+                              <Link href={`/works/work-details/${item.slug.current}`} target='_blank'>
                                 <GithubIcon className={""} />
                               </Link>
                             )}

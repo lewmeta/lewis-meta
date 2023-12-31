@@ -1,8 +1,7 @@
 import nodemailer from "nodemailer";
 
-// Replace the email and password values with a string containing your email and password
-const email = 'lewisonyango9@gmail.com'
-const password = 'lbpkdnzfjjrowyul'
+const email = process.env.NEXT_PUBLIC_MAIL_CONFIG
+const password = process.env.NEXT_PUBLIC_PASS_CONFIG
 
 
 const transporter = nodemailer.createTransport({

@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'post',
@@ -12,9 +12,9 @@ export default defineType({
     }),
 
     defineField({
-      name:'description',
-      description:'Enter a short snippet for the blog...',
-      title:'Desrption',
+      name: 'description',
+      description: 'Enter a short snippet for the blog...',
+      title: 'Desrption',
       type: 'string'
     }),
     defineField({
@@ -27,30 +27,23 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'pageViews',
-      title: 'Number Of Views',
-      type: 'number',
-      readOnly: true,
-      hidden: true,
-    }),
-    defineField({
       name: 'authors',
       title: 'Authors',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'authorinfo'}}],
+      of: [{ type: 'reference', to: { type: 'authorinfo' } }],
     }),
     defineField({
       name: "postTags",
       title: "Post Tags",
       description: "This contains the tags in each blog post",
       type: 'array',
-      of: [{type: 'reference', to: {type: 'postTag'}}],
+      of: [{ type: 'reference', to: { type: 'postTag' } }],
     }),
     defineField({
       name: "tags",
       title: "Tags",
       type: 'array',
-      of: [{type: 'reference', to: {type: 'tag'}}],
+      of: [{ type: 'reference', to: { type: 'tag' } }],
       // readOnly: true,
 
     }),
@@ -58,20 +51,12 @@ export default defineType({
       name: 'categories',
       title: 'Categories',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
-      // readOnly: true,   
-    }),
-    defineField({
-      name: 'singlePostInformations',
-      title: 'Information About Each Post',
-      description: 'Each Post has its own unique content, so here you can provide information about a particular post you are editing',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'singlePostInformation'}}],
+      of: [{ type: 'reference', to: { type: 'category' } }],
       // readOnly: true,   
     }),
     defineField({
       name: 'mainImage',
-      title:'Main image',
+      title: 'Main image',
       type: 'image',
       options: {
         hotspot: true,
@@ -87,6 +72,26 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      type: 'code',
+      name: 'myCodeField',
+      title: 'Code with all options',
+      options: {
+        language: 'javascript',
+        languageAlternatives: [
+          { title: 'Javascript', value: 'javascript' },
+          { title: 'HTML', value: 'html' },
+          { title: 'CSS', value: 'css' },
+        ],
+        withFilename: true,
+      },
+    }),
+    defineField({
+      name: 'codeInput',
+      title: 'Create code inputs and block contents',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'myCodeFields' } }],
+    }),
   ],
 
   preview: {
@@ -96,8 +101,8 @@ export default defineType({
       media: 'mainImage',
     },
     prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const { author } = selection
+      return { ...selection, subtitle: author && `by ${author}` }
     },
   },
 })

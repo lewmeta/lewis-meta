@@ -1,7 +1,6 @@
 import Blog from "@/components/Blog/Blog";
 import Layout from "@/components/Layout";
 import TransitionEffect from "@/components/TransitionEffect";
-import Header from "@/components/Blog/Header";
 import { client } from "@/lib/sanity.client";
 import { postQuery } from "@/lib/queries";
 import { Metadata } from "next";
@@ -25,7 +24,6 @@ export default function Page() {
         <>
             <TransitionEffect />
             <main className='w-full min-h-screen '>
-                {/* <Header/> */}
                 <Layout className='h-full'>
                     <Blog post={post}/>
                 </Layout>

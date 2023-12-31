@@ -32,7 +32,12 @@ export const postQuery = groq`*[_type == 'post']{
         _id,
         title,
         number,
-      }
+    },
+    "myCodeField": myCodeField { // Fetch the codeContent field
+        language,
+        code,
+        filename
+  },
   
 } | order(_createdAt desc)`;
 

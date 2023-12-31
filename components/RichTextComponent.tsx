@@ -42,7 +42,7 @@ export const RichTextComponent = {
 
     list: {
         bullet: ({children}: any) => (
-          <ul className='text-dark  relative font-bold text-[18px] list-inside'>
+          <ul className='text-dark dark:text-textDark tracking-[0.0025em] relative font-normal text-base list-decimal'>
            {children}
         </ul>
         ),
@@ -53,20 +53,20 @@ export const RichTextComponent = {
     },
     block: {
         normal:({children}: any) => (
-            <p className="leading-[32px] pt-[10px] pb-[11px] text-[16px] text-primaryText font-[400] ">{children}</p>
+            <p className="leading-[32px] pt-[10px] pb-[11px] text-[16px] text-primaryText dark:text-textDark font-[400] ">{children}</p>
         ),
 
         h1:({children}: any) => (
-            <h1 className="text-5xl py-10 font-bold">{children}</h1>
+            <h1 className="text-5xl py-10 font-normal">{children}</h1>
         ),
         h2:({children}: any) => (
-            <h2 className='text-[20px] py-10 font-bold'>{children}</h2>
+            <h2 className='text-lg md:text-[25px] dark:text-blueColor text-black py-10 font-bold'>{children}</h2>
         ),
         h3:({children}: any) => (
-            <h3 className='text-3xl py-10 font-bold'>{children}</h3>
+            <h3 className='text-3xl py-10 font-normal'>{children}</h3>
         ),
         h4:({children}: any) => (
-            <h4 className='text-2xl py-10 font-bold'>{children}</h4>
+            <h4 className='text-2xl py-10 font-normal'>{children}</h4>
         ),
 
         blockquote:({children}: any) => (

@@ -16,6 +16,14 @@ interface Author extends Base {
     socials: Socials[];
 }
 
+interface MyCodeField {
+    _type: 'code';
+    language: string;
+    code: string;
+    filename?: string;
+    body: Block[];
+}
+
 interface Post extends Base {
     authors: Author[];
     body: Block[];
@@ -25,8 +33,8 @@ interface Post extends Base {
     title: string;
     description: string;
     tags: Tag[];
-    views: number; // new field added here
-    singlePostInformations: [SinglePostInformation];
+    myCodeField: MyCodeField;
+    codeInput: MyCodeField[];
 }
 
 interface ImageArray {
@@ -177,6 +185,11 @@ interface ServiceTitle {
     title: string;
     id: number;
 }
+interface ServiceHeader {
+    title: string;
+    image: string;
+    description: string;
+}
 
 // Contact
 
@@ -190,3 +203,4 @@ interface InfoTimesQuery {
     description: string;
     socials : Socials[];
 }
+

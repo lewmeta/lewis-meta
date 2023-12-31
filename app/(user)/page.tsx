@@ -16,7 +16,7 @@ export default function Page() {
       <main className='w-full lg:pt-16'>
         <Layout className='h-full'>
           <Home home={home}/>
-          {/* <AboutIntro /> */}
+          <AboutIntro />
           {/* <Hireme/> */}
           {/* <Achievement /> */}
         </Layout>

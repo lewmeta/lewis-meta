@@ -34,7 +34,7 @@ const Form = ({ infoTimes }: Props) => {
         message = messageRef.current!.value;
         // Some form validation
         if (!name || !email || !subject || !message) {
-            alert("Failed: Ensure to fill all form inputs");
+            toast.error("Failed: Ensure to fill all form inputs");
             return;
         }
 
@@ -60,7 +60,7 @@ const Form = ({ infoTimes }: Props) => {
         } catch (error: any) {
             result = { message: `Failed: ${error.message}` };
         }
-        toast(result.message); // Gives the user some sort of feedback after the form has been processed
+        toast.success(result.message); // Gives the user some sort of feedback after the form has been processed
     }
 
     return (
@@ -123,7 +123,7 @@ const Form = ({ infoTimes }: Props) => {
                     </div>
                     <div className="lg:max-w-[33.33%] w-full lg:mb-0 mb-[30px] py-[30px] lg:order-2 order-1 lg:pl-[30px]">
                         <div className="w-full relative flex flex-col dark:bg-black bg-transparent py-[30px] px-[20px] lg:px-[30px] overflow-hidden rounded-lg z-10 border border-black/[0.09] dark:border-white/[0.09] mt-0  ">
-                            <p className="uppercase dark:text-white text-black font-semibold mb-5">Social media</p>
+                            <p className="uppercase dark:text-white text-black font-semibold mb-5">Social media contacts</p>
                             <div className="w-full flex flex-col gap-3">
                                 <ul className="w-auto relative transition-all duration-300 ease-in-out rounded-lg flex items-center">
                                     {item.socials.map((social, index) => (
@@ -142,19 +142,8 @@ const Form = ({ infoTimes }: Props) => {
                                             </a>
                                         </li>
                                     ))}
-                                    {/* <div className="w-[50px] h-[50px] rounded-sm text-base font-semibold transition-all duration-200 ease-in-out bg-blueColor text-white flex items-center justify-center ">
-                                        <Link href={"https://instagram"} target='_blank'>
-                                            <FaInstagram className="text-2xl" />
-                                        </Link>
-                                    </div> */}
                                 </ul>
-                                {/* <div className="w-auto relative transition-all duration-300 ease-in-out rounded-lg flex items-center">
-                                <div className="w-[50px] h-[50px] rounded-sm text-base font-semibold transition-all duration-200 ease-in-out bg-blueColor  hover:text-black text-white flex items-center justify-center ">
-                                    <Link href={""}>
-                                        <TwitterXIcon className="text-2xl" />
-                                    </Link>
-                                </div>
-                            </div> */}
+                             
                             </div>
                         </div>
                     </div>

@@ -31,7 +31,7 @@ const Footer = ({navquery}:Props) => {
           <p className="text-primaryText text-sm font-medium" key={index}>
             &copy; 2023 All rights reserved by
             <span className="text-blueColor transition-all duration-300 ease-in hover:dark:text-light hover:text-blueColor ml-1">
-              <Link href={`${item.githubLink}`} >@lewismeta</Link>
+              <Link href={`${item.githubLink}`} target='_blank'>@lewismeta</Link>
             </span>
           </p>
           ))}
