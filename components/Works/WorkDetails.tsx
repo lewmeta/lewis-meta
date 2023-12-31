@@ -49,32 +49,31 @@ const WorkDetails = ({ project }: Props) => {
                     <div className="lg:w-1/2 w-full flex-grow-0 flex-shrink-0 basis-auto lg:pr-2 mb-[40px] lg:mb-0 ">
                         <div className="w-full relative p-[24px] z-20 rounded-3xl dark:bg-black bg-[#FBFBFC]">
                             <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-10  dark:block hidden' />
-                            <h3 className="dark:text-textDark dark:opacity-50 text-lg uppercase font-medium tracking-tighter text-ligthText mb-3.5">{project.title}</h3>
-                            <p className="dark:text-white dark:opacity-80 text-base mb-5 text-black opacity-40">Sit amet luctussd fav venenatis, lectus magna fringilla inis urna, porttitor rhoncus dolor purus non enim praesent in elementum sahas facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etisam dignissim diam quis enim lobortis viverra orci sagittis eu volutpat odio facilisis mauris sit.</p>
-                            <p className="dark:text-white dark:opacity-80 text-base mb-5 text-black opacity-40">Sit amet luctussd fav venenatis, lectus magna fringilla inis urna, porttitor rhoncus dolor purus non enim praesent in elementum sahas facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etisam dignissim diam quis enim lobortis viverra orci sagittis eu volutpat odio facilisis mauris sit.</p>
+                            <h3 className="dark:text-textDark dark:opacity-50 text-lg capitalize font-medium tracking-tighter text-ligthText mb-3.5">{project.title}</h3>
+                            <p className="dark:text-white dark:opacity-80 text-base mb-5 text-black opacity-40">{project.bioArrays[0].description}</p>
                         </div>
                     </div>
                     <div className="lg:w-1/2 w-full flex-grow-0 flex-shrink-0 basis-auto lg:pl-2 ">
                         <div className="w-full relative p-[24px] z-20 rounded-3xl dark:bg-black bg-[#FBFBFC]">
                             <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-10  dark:block hidden' />
-                            <h3 className="dark:text-textDark dark:opacity-50 text-lg uppercase font-medium tracking-tighter text-ligthText mb-3.5">About {project.title}</h3>
-                            <p className="dark:text-white dark:opacity-80 text-base mb-5 text-black opacity-40">Sit amet luctussd fav venenatis, lectus magna fringilla inis urna, porttitor rhoncus dolor purus non enim praesent in elementum sahas facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etisam dignissim diam quis enim lobortis viverra orci sagittis eu volutpat odio facilisis mauris sit.</p>
-                            <p className="dark:text-white dark:opacity-80 text-base mb-5 text-black opacity-40">Sit amet luctussd fav venenatis, lectus magna fringilla inis urna, porttitor rhoncus dolor purus non enim praesent in elementum sahas facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etisam dignissim diam quis enim lobortis viverra orci sagittis eu volutpat odio facilisis mauris sit.</p>
+                            <h3 className="dark:text-textDark dark:opacity-50 text-lg capitalize font-medium tracking-tighter text-ligthText mb-3.5">About {project.title}</h3>
+                            <p className="dark:text-white dark:opacity-80 text-base mb-5 text-black opacity-40">{project.bioArrays[1].description}</p>
+
                         </div>
                     </div>
                 </div>
                 <div className="sm:[350px] h-[250px] md:h-[400px] w-full my-[50px] mb-[30px] rounded-3xl overflow-hidden">
-                    <Image src={urlFor(project.mainImage).url()} width={800} height={800} sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," alt="project1" className="w-full h-full object-cover" />
+                    <Image src={urlFor(project.imageArrays[0].image).url()} width={800} height={800} sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," alt="project1" className="w-full h-full object-cover" />
                 </div>
                 <div className="w-full flex flex-wrap">
                     <div className="lg:w-1/2 w-full flex-grow-0 flex-shrink-0 basis-auto lg:pr-4 mb-[40px] lg:mb-0 ">
                         <div className="w-full sm:[350px] h-[250px] md:h-[400px] rounded-3xl overflow-hidden">
-                            <Image src={urlFor(project.mainImage).url()} width={800} height={800} sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," alt="project1" className="w-full h-full object-cover" />
+                            <Image src={urlFor(project.imageArrays[1].image).url()} width={800} height={800} sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," alt="project1" className="w-full h-full object-cover" />
                         </div>
                     </div>
                     <div className="lg:w-1/2 w-full flex-grow-0 flex-shrink-0 basis-auto lg:pl-4 ">
                         <div className="w-full sm:[350px] h-[250px] md:h-[400px] rounded-3xl overflow-hidden">
-                            <Image src={urlFor(project.mainImage).url()} width={800} height={800} sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," alt="project1" className="w-full h-full object-cover" />
+                            <Image src={urlFor(project.imageArrays[2].image).url()} width={800} height={800} sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," alt="project1" className="w-full h-full object-cover" />
                         </div>
                     </div>
                 </div>

@@ -9,7 +9,7 @@ import { groq } from 'next-sanity';
 
 type Props = {
   params: {
-      slug: string
+    slug: string
   };
 };
 
@@ -27,8 +27,8 @@ export async function generateMetadata(
   const singleproject: Projects = await client.fetch(query, { slug });
 
   return {
-      title: `Project Details | ${singleproject?.title}`,
-      description: singleproject?.description,
+    title: `Project Details | ${singleproject?.title}`,
+    description: singleproject?.description,
   };
 }
 
@@ -43,7 +43,7 @@ export async function generateStaticParams() {
   const slugs: Projects[] = await client.fetch(query);
   const slugRoutes = slugs.map((slug) => slug.slug.current);
   return slugRoutes.map((slug) => ({
-      slug,
+    slug,
   }))
 
 }
@@ -66,7 +66,15 @@ export default async function Page({ params: { slug }, }: Props) {
     }
   },
   "postTags": postTags[]->{title,slug },
-  "categories": categories[]->{title,number}
+  "categories": categories[]->{title,number},
+  "bioArrays": bioArrays[]->{
+    description,      
+    id,
+  },
+  "imageArrays": imageArrays[]->{
+    image,      
+    id,
+  },
 }`;
 
   const project: Projects = await client.fetch(query, { slug })
@@ -76,14 +84,14 @@ export default async function Page({ params: { slug }, }: Props) {
 
 
   return (
-      <>
-          <TransitionEffect />
-          <main className='w-full min-h-screen pt-16'>
-              <Layout className='h-full'>
-                  <WorkDetails project={project}/>
-              </Layout>
-          </main>
-      </>
+    <>
+      <TransitionEffect />
+      <main className='w-full min-h-screen pt-16'>
+        <Layout className='h-full'>
+          <WorkDetails project={project} />
+        </Layout>
+      </main>
+    </>
   )
 }
 

@@ -54,7 +54,14 @@ export const projectQuery = groq`*[_type == 'project']{
     title,
     number
   },
-
+  "bioArrays": bioArrays[]->{
+    description,      
+    id,
+  },
+  "imageArrays": imageArrays[]->{
+    image,      
+    id,
+  },
 }`;
 
 // Home Page
