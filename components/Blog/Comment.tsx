@@ -53,16 +53,14 @@ const Comment = () => {
             <div className="mt-[70px] py-9 lg:px-11 md:px-8 px-5 flex-wrap rounded-3xl bg-white dark:bg-black relative w-full">
                 <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-10 z-10' />
                 <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30 -m-0.5 opacity-50' />
-                <h1>Comments</h1>
+                {/* <h1>Comments</h1>
                 <ul>
                     {comments.map((comment, id) => (
                         <li key={id}>
-                            {/* <h3>{comment.title}</h3> */}
                             <p>{comment.body}</p>
-                            {/* Display additional comment details as needed */}
                         </li>
                     ))}
-                </ul>
+                </ul> */}
                 <h1 className="text-2xl leading-8 dark:text-white text-ligthText mb-10" >{comment.length} comments</h1>
                 <span className="comments"></span>
                 <div className="relative w-full">
