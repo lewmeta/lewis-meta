@@ -56,6 +56,8 @@ export const myStructure = (S) =>
                         .items([
                             S.documentTypeListItem("post")
                                 .title('Create Articles'),
+                            S.documentTypeListItem("comment")
+                                .title('Created comments '),
                         ])
                 ),
             S.listItem()

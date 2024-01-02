@@ -15,7 +15,7 @@ const Header = ({ serviceHeader }: Props) => {
                     <Layout>
                         <div className="w-full z-20"
                         >
-                            <h1 className='mb-[20px] text-[42px] sm:leading-[52px] text-white font-semibold capitalize pb-[0px] '>{item.title}</h1>
+                            <h1 className='mb-[20px] sm:text-[42px] text-[30px] leading-[40px] sm:leading-[52px] text-white font-semibold capitalize pb-[0px] '>{item.title}</h1>
                             <p className='text-xl max-w-[600px] w-full text-white font-light'>{item.description}</p>
                         </div>
                     </Layout>

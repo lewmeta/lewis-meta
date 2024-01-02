@@ -6,8 +6,11 @@ import imageUrlBuilder from "@sanity/image-url"
 
 const builder = imageUrlBuilder(client);
 
-function urlFor(source:any) {
+export default function urlFor(source:any) {
     return builder.image(source);
 }
 
-export default urlFor;
+export function urlForOpenGraph(source: any) {
+    // Apply transformations specific to OG images (e.g., dimensions, fit, crop)
+    return builder.image(source).width(1200).height(627).fit('crop').url();
+}

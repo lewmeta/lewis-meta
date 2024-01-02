@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
 import '../globals.css'
 import { Lexend_Deca, Caveat } from 'next/font/google'
-import Navbar from '@/components/Navbar'
-import Footer from '@/components/Footer'
 import Provider from '@/components/Hooks/Provider'
 import AnimatePresenc from '@/components/AnimatePresence'
 import NavFetch from '@/components/Home/navFetch'
 import FooterFetch from '@/components/Home/footerFetch'
 import 'react-toastify/dist/ReactToastify.css';
-
 import { ToastContainer } from 'react-toastify'
+import { urlForOpenGraph } from '@/lib/urlFor'
+import { groq } from 'next-sanity'
+import { client } from '@/lib/sanity.client'
 
 const lexend_deca = Lexend_Deca({
   subsets: ['latin'],
@@ -25,36 +25,30 @@ const caveat = Caveat({
 })
 
 
-export const metadata: Metadata = {
-  title: 'Lewis Meta | Portfolio website',
-  description: 'Welcome to my portfolio website. Lets work together',
-  referrer: 'origin-when-cross-origin',
-  keywords: ['lewis', 'meta', 'lewismeta', 'lewisonyango'],
-  authors: [{ name: 'Lewis' }, { name: 'Meta', url: 'https://lewmeta.vercel.com' }],
-  creator: 'Lewis Meta',
-  publisher: 'Lewis Meta',
-  openGraph: {
-    type: 'website',
-    url: 'https://lewmeta.vercel.com',
-    title: 'Lewis Meta Portfolio',
-    description: "Welcome to my portfolio website. Let's connect",
-    siteName: 'Lew Meta',
-    images: [
-      {
-        url: 'https://nextjs.org/og.png',
-        width: 800,
-        height: 600,
-      },
-      {
-        url: 'https://nextjs.org/og-alt.png',
-        width: 1800,
-        height: 1600,
-        alt: 'My custom alt',
-      },
-    ],
-    locale: 'en_US',
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const homeQuery = groq`*[_type == "home"]{
+    ogImage,
+    ..., 
+   //  pdf.asset->url
+   "pdf": pdf.asset->url,
+  }`
+  const data:HomeProps[] = await client.fetch(homeQuery)
+  const dataInfo = data[0]
+  const ogImage = urlForOpenGraph(data[0].ogImage)
+
+  return {
+    title: `${dataInfo?.name} - Personal website`,
+    description: dataInfo?.name,
+    openGraph: {
+      type: 'website',
+      title: `${dataInfo?.name} Personal website`,
+      description: "Welcome to my portfolio website. Get to know me better",
+      siteName: 'lewismeta',
+      images: ogImage ? [ogImage] : [],
+    },
+  }
 }
+
 
 export default function RootLayout({
   children,

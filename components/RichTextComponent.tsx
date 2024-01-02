@@ -47,7 +47,7 @@ export const RichTextComponent = {
         </ul>
         ),
         number:({children}: any) => (
-          <ol>{children}</ol>
+          <ol className='text-dark dark:text-textDark tracking-[0.0025em] relative font-normal text-base list-decimal'>{children}</ol>
         ),
     
     },

@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaSearch, FaTwitch, FaTwitter, FaYoutube } from "react-icons/fa"
 import urlFor from "@/lib/urlFor"
+import stars from "../../public/images/star.png"
 
 type Props = {
     post: Post[];
@@ -12,12 +13,13 @@ const Blog = ({ post }: Props) => {
     const firstPost = post.slice(0, 1)
     return (
         <section className="w-full mt-[50px]">
-            <div className="w-full dark:text-textDark dark:opacity-70 mb-8 text-ligthText/90 flex items-center font-semibold">
-                <Link href={"/"} className="opacity-100">Home</Link>
-                <p className="pl-1 "> - My published articles</p>
+            <div className="w-full md:justify-start flex gap-5 items-center justify-start mb-8">
+                <Image src={stars} alt='start-img' priority sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," />
+                <h1 className="text-[26px] leading-[36px] md:text-[45px] text-dark dark:text-white md:leading-[55px] sm:text-[30px] sm:leading-[40px] lg:text-[70px] lg:leading-[75px] uppercase font-semibold">published <span className="text-blueColor">articles</span></h1>
+                <Image src={stars} alt='start-img' priority sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," className='overflow-hidden' />
             </div>
             <div className="w-full flex flex-wrap">
-                <div className="lg:w-[75%] w-full">
+                <div className="lg:w-[66.6667%] w-full">
                     <div className="flex flex-wrap gap-12 w-full">
                         {post.map((item, index) => (
                             <div className="w-full lg:pr-6 mb-10 lg:mb-0" key={index}>
@@ -56,7 +58,7 @@ const Blog = ({ post }: Props) => {
                     </div>
 
                 </div>
-                <div className="lg:w-[25%] w-full">
+                <div className="lg:w-[33.3333%] w-full">
                     <div className="p-[20px] w-full overflow-hidden rounded-md border dark:border-white/[0.2] border-dark/[0.2] sticky top-[20%]">
                         {firstPost.map((item, index) => (
                             <div className="block space-y-[10px]" key={index}>
@@ -91,6 +93,25 @@ const Blog = ({ post }: Props) => {
 
                                 </div>
                                 {/* Related posts */}
+                                <div className="mb-10 relative w-full dark:bg-black rounded-3xl pt-[46px] pr-[30px] pb-[62px] pl-[30px] bg-white">
+                                    <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-25 z-10' />
+                                    <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30' />
+                                    <h1 className="dark:text-textDark font-medium dark:opacity-50 text-lg uppercase mb-7 text-ligthText/70">Recent Posts</h1>
+                                    <ul className="list-none relative z-20">
+                                        {/* {posts.map((item, index) => (
+                                    <li className="border-b  border-solid border-[#dbdfe4] mb-3.5 pb-3.5 text-sm leading-6" key={index}>
+                                        <Link href={`/blog/blog-details/${item.slug.current}`} className="block leading-6 text-base dark:text-white text-ligthText opacity-80 hover:text-blueColor transition-all duration-300 ease-in">{item.title}</Link>
+                                    </li>
+                                ))} */}
+                                    </ul>
+                               < div className="w-full">
+                                        {item.tags.map((item, index) => (
+                                            <span className='bg-[#eaeaea] inline-block text-primaryText py-[5px] px-[11px] text-[0.7rem] font-[500] mt-0 mx-[3px] mb-[7px]' key={index}>
+                                                {item.title}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
                                 <div
                                     className='relative block p-[30px] group rounded-[5px] w-full '
                                 >

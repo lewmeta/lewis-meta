@@ -15,13 +15,23 @@ interface Author extends Base {
     slug: Slug;
     socials: Socials[];
 }
+interface CodeInput {
+    _type: 'code';
+    language: string;
+    code: string;
+    filename?: string;
+}
+
+interface CodeBlock {
+    body: Block[];
+    myCodeField : CodeInput;
+}
 
 interface MyCodeField {
     _type: 'code';
     language: string;
     code: string;
     filename?: string;
-    body: Block[];
 }
 
 interface Post extends Base {
@@ -29,12 +39,13 @@ interface Post extends Base {
     body: Block[];
     categories: Category[];
     mainImage: Image;
+    ogImage: Image;
     slug: slug;
     title: string;
     description: string;
     tags: Tag[];
     myCodeField: MyCodeField;
-    codeInput: MyCodeField[];
+    codeInput: CodeBlock[];
 }
 
 interface ImageArray {
@@ -59,6 +70,7 @@ interface Projects extends Base {
     liveSite: string;
     title: string;
     description: slug;
+    myCodeField: MyCodeField;
     tags: Tag[];
 }
 
@@ -96,6 +108,7 @@ interface HomeProps {
     title: string;
     bio: string;
     pdf: string;
+    ogImage: string;
 }
 
 interface AboutIntro {
@@ -204,3 +217,14 @@ interface InfoTimesQuery {
     socials : Socials[];
 }
 
+
+interface Comments {
+    title: string;
+    email: string;
+    comment: string;
+}
+
+interface CommentProps {
+    title: string;
+    body: string;
+}

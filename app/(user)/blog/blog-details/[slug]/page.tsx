@@ -5,6 +5,7 @@ import BlogDetails from "@/components/Blog/BlogDetails";
 import { groq } from "next-sanity";
 import { client } from "@/lib/sanity.client";
 import { postQuery } from "@/lib/queries";
+import { urlForOpenGraph } from "@/lib/urlFor";
 
 type Props = {
     params: {
@@ -21,13 +22,19 @@ export async function generateMetadata(
     const query = groq`*[_type=="post" && slug.current == $slug][0]{
       title, // Ensure title is fetched
       description, // Ensure description is fetched
+      ogImage, // Ensure description is fetched
       ...
     }`;
     const singlecause: Post = await client.fetch(query, { slug });
-
+    // Generate OG image URL for the current post's cover image
+    const ogImage = urlForOpenGraph(singlecause?.ogImage);
     return {
         title: `Blog Details | ${singlecause?.title}`,
         description: singlecause?.description,
+        openGraph: ogImage
+        ? {
+            images : [ogImage]
+        }: {},
     };
 }
 
@@ -74,6 +81,7 @@ export default async function Page({ params: { slug }, }: Props) {
     "codeInput": codeInput[]->{
          ...,
     },
+    
   }`;
 
     const post: Post = await client.fetch(query, { slug })

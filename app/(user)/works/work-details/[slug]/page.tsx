@@ -75,6 +75,11 @@ export default async function Page({ params: { slug }, }: Props) {
     image,      
     id,
   },
+  "myCodeField": myCodeField { // Fetch the codeContent field
+        language,
+        code,
+        filename
+  },
 }`;
 
   const project: Projects = await client.fetch(query, { slug })

@@ -26,7 +26,7 @@ const Credentials = ({ credentials, skills, experience, education }: Props) => {
                                 <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-10 -m-0.5' />
                                 <div className="rounded-3xl mb-10 bg-shadowImageDark overflow-hidden relative">
                                     <Image src={urlFor(item.image).url()} alt='me' width={800} height={800}
-                                        sizes="(max-width: 768px) 100vw, (max-width:1200px) 50vw 30vw, " priority className='object-cover w-full h-[350px] lg:h-[320px] md:h-[500px] rounded-3xl' />
+                                        sizes="(max-width: 768px) 100vw, (max-width:1200px) 50vw 30vw, " priority className='object-cover w-full h-[500px] lg:h-[320px] md:h-[500px] rounded-3xl' />
                                 </div>
                                 <h1 className="text-ligthText dark:text-white font-medium text-[26px] mb-3">{item.name}</h1>
                                 <Link href={item.link} target="_blank" className="dark:dark:text-textDark text-ligthText/70 hover:text-blueColor transition-all duration-300 ease-in dark:opacity-60 text-sm mb-6">{item.handle}</Link>
@@ -45,7 +45,7 @@ const Credentials = ({ credentials, skills, experience, education }: Props) => {
                                         </li>
                                     ))}
                                 </ul>
-                                <Link href={"/contact"} className="w-full z-20 relative dark:bg-dark bg-light dark:text-white text-ligthText transition-all duration-300 rounded-2xl text-sm font-medium py-3 px-8 text-center capitalize">contact me</Link>
+                                <Link href={"/contact"} className="w-full z-20 relative dark:bg-dark hover:dark:bg-blueColor hover:dark:text-white  bg-light dark:text-white text-ligthText hover:transition-all hover:duration-300 ease-in rounded-2xl text-sm font-medium py-3 px-8 text-center capitalize">contact me</Link>
                             </div>
                         </div>
                     </div>

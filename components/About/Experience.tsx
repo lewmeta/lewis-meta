@@ -8,10 +8,10 @@ type Props = {
 const Experience = ({ experience }: Props) => {
 
     return (
-        <section className='lg:w-[80%] w-full h-full pt-8 '>
+        <section className='w-full h-full pt-8 '>
             {experience.map((item, index) => (
                 <div className='w-full ' key={index}>
-                    <div className="w-full mb-[40px] px-0 pt-[50px]  relative">
+                    <div className="w-full mb-[40px] px-0 pt-[50px] text-center flex flex-col items-center  relative">
                         <h1 className='text-[26px] leading-[35px] capitalize font-medium dark:text-white text-ligthText w-full'>{item.title}</h1>
                         <p className='max-w-[650px] w-full leading-[20px] font-light pt-[10px] mt-6 pb-[20px] text-base relative'>
                             {item.description}</p>

@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
     name: "home",
@@ -13,7 +13,7 @@ export default defineType({
         }),
         defineField({
             name: "title",
-            title:"Give Job Title ",
+            title: "Give Job Title ",
             description: "Give a job Title here!",
             type: "string",
         }),
@@ -36,6 +36,15 @@ export default defineType({
             title: "Upload Resume",
             type: "file",
             validation: Rule => Rule.required(),
+        }),
+        defineField({
+            name: 'ogImage',
+            title: 'Open Graph Image',
+            type: 'image',
+            description: 'Displayed on social cards and search engine results.',
+            options: {
+                hotspot: true,
+            },
         }),
     ],
     preview: {
