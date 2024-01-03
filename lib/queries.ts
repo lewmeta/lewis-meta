@@ -37,8 +37,20 @@ export const postQuery = groq`*[_type == 'post']{
         language,
         code,
         filename
+  },  
+  "ogmetadatas": ogmetadatas[]->{
+  ogImage,
+  title,
+  description,      
+  "authors": authors[]->{
+    name, 
+    image,
+    socials[]->{
+      platform,
+      url
+    }
   },
-  
+},
 } | order(_createdAt desc)`;
 
 export const projectQuery = groq`*[_type == 'project']{
@@ -67,6 +79,19 @@ export const projectQuery = groq`*[_type == 'project']{
     image,      
     id,
   },
+  "ogmetadatas": ogmetadatas[]->{
+  ogImage,
+  title,
+  description,      
+  "authors": authors[]->{
+    name, 
+    image,
+    socials[]->{
+      platform,
+      url
+    }
+  },
+},
 }`;
 
 // Home Page
@@ -78,6 +103,20 @@ export const homeQuery = groq`*[_type == "home"]{
 }`
 export const aboutIntroQuery = groq`*[_type == "aboutIntro"]{
  ..., 
+ "ogmetadatas": ogmetadatas[]->{
+  ogImage,
+  title,
+  description,      
+  "authors": authors[]->{
+    name, 
+    image,
+    socials[]->{
+      platform,
+      url
+    }
+  },
+},
+
 }`
 export const achievementsQuery = groq`*[_type == "achievements"]{
  ..., 
@@ -109,7 +148,20 @@ export const credentialsQuery = groq`*[_type == 'credentials']{
   "bioArrays": bioArrays[]->{
     description,      
     id,
-  }
+  },
+  "ogmetadatas": ogmetadatas[]->{
+    ogImage,
+    title,
+    description,      
+    "authors": authors[]->{
+      name, 
+      image,
+      socials[]->{
+        platform,
+        url
+      }
+    },
+  },
 
 } | order(_createdAt desc)`;
 
@@ -148,7 +200,20 @@ export const servicesQuery = groq`*[_type == 'myservices']{
     "serviceTitle": serviceTitle[]->{
         title,
         id,
+  },
+  "ogmetadatas": ogmetadatas[]->{
+    ogImage,
+    title,
+    description,      
+    "authors": authors[]->{
+      name, 
+      image,
+      socials[]->{
+        platform,
+        url
+      }
     },
+  },
 
 } | order(_createdAt desc)`;
 

@@ -1,4 +1,4 @@
-import {defineField, defineType} from "sanity"
+import { defineField, defineType } from "sanity"
 
 export default defineType({
     name: "myservices",
@@ -16,17 +16,23 @@ export default defineType({
             title: "Service Info",
             description: "Create an array of the serive info object...",
             type: "array",
-            of: [{type: "reference", to: {type: "serviceInfo"}}] 
-         }),
+            of: [{ type: "reference", to: { type: "serviceInfo" } }]
+        }),
         defineField({
             name: "serviceTitle",
             title: "Service Titles",
             description: "Create an array of the serive titles...",
             type: "array",
-            of: [{type: "reference", to: {type: "serviceTitle"}}] 
-         }),
+            of: [{ type: "reference", to: { type: "serviceTitle" } }]
+        }),
+        defineField({
+            name: 'ogmetadatas',
+            title: 'Create Meta Data for this page. helps with seo perfomance',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'ogmetadata' } }],
+        }),
     ],
-    preview : {
+    preview: {
         select: {
             title: "title"
         },

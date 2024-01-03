@@ -5,13 +5,30 @@ import Works from '@/components/Works/Works'
 import TransitionEffect from '@/components/TransitionEffect'
 import { client } from '@/lib/sanity.client'
 import { projectQuery } from '@/lib/queries'
+import { urlForOpenGraph } from '@/lib/urlFor'
 
-export const metadata: Metadata = {
-  title: 'My work | Lewis Meta',
-  description: 'Learn more about my work',
-}
 
 const project = await client.fetch(projectQuery)
+
+export async function generateMetadata(): Promise<Metadata> {
+
+  const credentialsmeta: Projects[] = await client.fetch(projectQuery)
+  const credentialsdata = credentialsmeta[0].ogmetadatas[0]
+  const ogImage = urlForOpenGraph(credentialsdata.ogImage)
+
+  return {
+      title: `${credentialsdata.title}`,
+      description: `${credentialsdata.description}`,
+      authors:[ {name: `${credentialsdata.authors[0].name}`, url:"" }, ] ,
+      openGraph: {
+          type: 'website',
+          title: `${credentialsdata.title} - ${credentialsdata.description}`,
+          description: `${credentialsdata.description}`,
+          siteName: 'lewismeta',
+          images: ogImage ? [ogImage] : [],
+      },
+  }
+}
 
 const page = () => {
   return (

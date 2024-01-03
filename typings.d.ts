@@ -46,6 +46,8 @@ interface Post extends Base {
     tags: Tag[];
     myCodeField: MyCodeField;
     codeInput: CodeBlock[];
+    ogmetadatas: OGMEtaData[];
+
 }
 
 interface ImageArray {
@@ -58,6 +60,14 @@ interface Navbar {
     socials: Socials[];
     githubLink: string;
 }
+
+interface OGMEtaData {
+    title: string;
+    description: string;
+    authors: Author[];
+    ogImage: Image;
+}
+
 interface Projects extends Base {
     authors: Author[];
     body: Block[];
@@ -65,10 +75,12 @@ interface Projects extends Base {
     imageArrays: ImageArray[];
     bioArrays: BioArray[];
     mainImage: Image;
+    ogImage: string;
     slug: slug;
     githubLink: string;
     liveSite: string;
     title: string;
+    ogmetadatas: OGMEtaData[];
     description: slug;
     myCodeField: MyCodeField;
     tags: Tag[];
@@ -109,6 +121,7 @@ interface HomeProps {
     bio: string;
     pdf: string;
     ogImage: string;
+    email: string;
 }
 
 interface AboutIntro {
@@ -116,6 +129,7 @@ interface AboutIntro {
     name: string;
     image: string;
     bio: string;
+    ogmetadatas: OGMEtaData[];
 }
 
 interface Achievements {
@@ -148,6 +162,7 @@ interface Credentials {
     handle: string;
     socials: Socials[];
     bioArrays: BioArray[];
+    ogmetadatas: OGMEtaData[];
 }
 
 interface BioArray {
@@ -184,7 +199,8 @@ interface Skills {
 interface MyServices {
     title: string;
     servicesInfo: ServiceInfo[];
-    serviceTitle: ServiceTitle[]
+    serviceTitle: ServiceTitle[];
+    ogmetadatas: OGMEtaData[];
 }
 interface ServiceInfo {
     image: string;

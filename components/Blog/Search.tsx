@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { postQuery } from '@/lib/queries';
 import { client } from '@/lib/sanity.client';
 import { toast } from "react-hot-toast"
-import { FaTruckLoading } from 'react-icons/fa';
 import Link from 'next/link';
 
 interface SearchProps {
@@ -59,16 +58,20 @@ const Search = ({ searchQuery }: SearchProps) => {
                 <div className="">
                     {postResults.length > 0 && (
                         <div className="">
-                            <p className="">Post results</p>
                             {postResults.map((item, index) => (
-                                <div className="t-50" key={index}>
-                                    <Link href={`/blog/blog-details/${item.slug.current}`}>
-                                        {item.title}
-                                    </Link>
+                                <div className="" key={index}>
+                                    <div className="border-b  border-solid border-[#dbdfe4] mb-3.5 pb-3.5 text-sm leading-6">
+                                        <Link href={`/blog/blog-details/${item.slug.current}`} className="block leading-6 text-base dark:text-white text-ligthText opacity-80 hover:text-blueColor transition-all duration-300 ease-in">{item.title}</Link>
+                                    </div>
                                 </div>
                             ))}
                         </div>
 
+                    )}
+                    {postResults.length === 0 && (
+                        <div className='w-full h-full '>
+                            <h1 className="text-base dark:text-textDark font-light text-ligthText">Oops 🤔, no search found for <strong className='uppercase'>{searchQuery}</strong></h1>
+                        </div>
                     )}
                 </div>
             ) : null}

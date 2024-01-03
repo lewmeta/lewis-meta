@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'project',
@@ -12,9 +12,9 @@ export default defineType({
     }),
 
     defineField({
-      name:'description',
-      description:'Enter a short snippet for the blog...',
-      title:'Description',
+      name: 'description',
+      description: 'Enter a short snippet for the blog...',
+      title: 'Description',
       type: 'string'
     }),
     defineField({
@@ -41,42 +41,48 @@ export default defineType({
       name: 'authors',
       title: 'Authors',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'authorinfo'}}],
+      of: [{ type: 'reference', to: { type: 'authorinfo' } }],
     }),
     defineField({
       name: "tags",
       title: "Tags",
       type: 'array',
-      of: [{type: 'reference', to: {type: 'tag'}}],
+      of: [{ type: 'reference', to: { type: 'tag' } }],
     }),
     defineField({
       name: 'categories',
       title: 'Categories',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      of: [{ type: 'reference', to: { type: 'category' } }],
     }),
     defineField({
       name: 'bioArrays',
       title: 'Create arrays here for the project',
       description: 'Create arrays here for the project to give more information',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'bioArray'}}],
+      of: [{ type: 'reference', to: { type: 'bioArray' } }],
     }),
     defineField({
       name: 'imageArrays',
       title: 'Create arrays for the Image',
       description: 'Create arrays here for the project images to give more information',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'imageArray'}}],
+      of: [{ type: 'reference', to: { type: 'imageArray' } }],
     }),
 
     defineField({
       name: 'mainImage',
-      title:'Main image',
+      title: 'Main image',
       type: 'image',
       options: {
         hotspot: true,
       },
+    }),
+    defineField({
+      name: 'ogmetadatas',
+      title: 'Create Meta Data for this page. helps with seo perfomance',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'ogmetadata' } }],
     }),
     defineField({
       name: 'publishedAt',
@@ -113,8 +119,8 @@ export default defineType({
       media: 'mainImage',
     },
     prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const { author } = selection
+      return { ...selection, subtitle: author && `by ${author}` }
     },
   },
 })

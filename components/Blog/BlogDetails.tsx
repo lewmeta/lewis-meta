@@ -28,7 +28,7 @@ Refractor.registerLanguage(ts)
 Refractor.registerLanguage(py)
 
 const BlogDetails = ({ post, posts }: Props) => {
-    
+
     console.log("BLOGS", post.codeInput)
     const [searchQuery, setSearchQuery] = useState<string>('');
     const [showSearch, setShowSearch] = useState(false);
@@ -37,11 +37,11 @@ const BlogDetails = ({ post, posts }: Props) => {
         searchQuery
     }
 
-    const handleSubmit = (e:any) => {
+    const handleSubmit = (e: any) => {
         e.preventDefault();
         handleSearch();
     }
-    
+
     return (
         <section className="w-full">
             <h1 className="lg:text-[56px] lg:leading-[70px] md:text-[46px] md:leading-[60px] sm:text-[35px] sm:leading-[45px] text-[28px] leading-[35px] relative mb-7 font-semibold gap-6 dark:text-white text-ligthText flex items-center lg:w-[85%] w-full">
@@ -67,51 +67,51 @@ const BlogDetails = ({ post, posts }: Props) => {
                         <div className="mt-7" key={index}>
                             <div className="">
 
-                            <PortableText value={codex.body} components={RichTextComponent} />
+                                <PortableText value={codex.body} components={RichTextComponent} />
 
-                            {codex.myCodeField && (
-                                <div className="">
-                                    <span className="text-sm dark:text-textDark text-ligthText/70 ">{codex.myCodeField.filename}.tsx</span>
-                                    <Refractor
-                                        language={codex.myCodeField.language}
-                                        value={codex.myCodeField.code}
-                                    />
-                                </div>
+                                {codex.myCodeField && (
+                                    <div className="">
+                                        <span className="text-sm dark:text-textDark text-ligthText/70 ">{codex.myCodeField.filename}.tsx</span>
+                                        <Refractor
+                                            language={codex.myCodeField.language}
+                                            value={codex.myCodeField.code}
+                                        />
+                                    </div>
 
-                            )}
+                                )}
                             </div>
                         </div>
 
                     ))}
 
                     <div className="z-[199]">
-                        <Comment/>
+                        <Comment />
                     </div>
                 </div>
 
                 <div className="lg:w-[33.3333%] w-full">
-                    <div className="w-full sticky top-[20%]">
-                        <div className="mb-10 relative w-full dark:bg-black rounded-3xl pt-[46px] pr-[30px] pb-[62px] pl-[30px] bg-white">
-                            <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight opacity-25 rounded-3xl !-z-0' />
+                    <div className="w-full sticky top-[20%] z-10">
+                        <div className="mb-10 relative w-full dark:bg-black rounded-3xl pt-[46px] pr-[30px] pb-[62px] pl-[30px] bg-white z-[-10]">
+                            <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight opacity-[0.005] rounded-3xl -z-40' />
                             <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30' />
                             <form action="" className="relative z-30 w-full" role="search" onSubmit={handleSubmit} >
                                 <label htmlFor="search" className="mb-2.5 block -mt-0.5 z-20 ">Search here</label>
                                 <div className="relative border border-solid border-[#e7e7e7] rounded-md flex max-w-full flex-nowrap bg-white">
                                     <input type="text" className="border-none bg-white p-3.5 min-h-[60px] w-full outline-none"
-                                     placeholder="Enter your seach here ..." 
-                                     required 
-                                     value={searchQuery}
-                                     onChange={(e) => setSearchQuery(e.target.value)}
+                                        placeholder="Enter your seach here ..."
+                                        required
+                                        value={searchQuery}
+                                        onChange={(e) => setSearchQuery(e.target.value)}
                                     />
-                                    <button 
-                                    onClick={handleSearch}
+                                    <button
+                                        onClick={handleSearch}
 
-                                    className="absolute right-1.5 w-auto top-1.5 text-sm z-30 rounded-md  capitalize transition-all duration-300 ease-in bg-blueColor text-white px-5 min-h-[50px] tracking-widest">Search</button>
+                                        className="absolute right-1.5 w-auto top-1.5 text-sm z-30 rounded-md  capitalize transition-all duration-300 ease-in bg-blueColor text-white px-5 min-h-[50px] tracking-widest">Search</button>
                                 </div>
                             </form>
 
-                            <div className="mt-5 z-30">
-                                <Search searchQuery={searchQuery}/>
+                            <div className="mt-5 z-[999999]">
+                                <Search searchQuery={searchQuery} />
                             </div>
                         </div>
                         <div className="mb-10 relative w-full dark:bg-black rounded-3xl pt-[46px] pr-[30px] pb-[62px] pl-[30px] bg-white">
@@ -132,12 +132,12 @@ const BlogDetails = ({ post, posts }: Props) => {
                             <h1 className="dark:text-textDark font-medium dark:opacity-50 text-lg uppercase mb-7 text-ligthText/70">Recent comments</h1>
                             <p className="">No comment yet, be the first to comment !</p>
                         </div>
-                        <div className="mb-10 relative w-full dark:bg-black rounded-3xl pt-[46px] pr-[30px] pb-[62px] pl-[30px] bg-white">
+                        {/* <div className="mb-10 relative w-full dark:bg-black rounded-3xl pt-[46px] pr-[30px] pb-[62px] pl-[30px] bg-white">
                             <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-25 z-10' />
                             <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30' />
                             <h1 className="dark:text-textDark font-medium dark:opacity-50 text-lg uppercase mb-7 text-ligthText/70">Recent comments</h1>
                             <h1 className="font-medium dark:text-white/80 text-ligthText text-base">June 2023</h1>
-                        </div>
+                        </div> */}
                         <div className="mb-10 relative w-full dark:bg-black rounded-3xl pt-[46px] pr-[30px] pb-[62px] pl-[30px] bg-white">
                             <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-25 z-10' />
                             <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30' />

@@ -24,6 +24,12 @@ export default defineType({
             type: "string"
         }),
         defineField({
+            name: "email",
+            title: "Give your email ",
+            description: "Give a your email here",
+            type: "string"
+        }),
+        defineField({
             name: "image",
             title: "Main Image",
             type: "image",

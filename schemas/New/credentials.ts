@@ -42,6 +42,12 @@ export default defineType({
             type: "array",
             of: [{ type: "reference", to: { type: "bioArray" } }]
         }),
+        defineField({
+            name: 'ogmetadatas',
+            title: 'Create Meta Data for this page. helps with seo perfomance',
+            type: 'array',
+            of: [{ type: 'reference', to: { type: 'ogmetadata' } }],
+        }),
     ],
     preview: {
         select: {

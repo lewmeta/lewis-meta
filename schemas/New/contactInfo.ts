@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'contactInfo',
@@ -20,7 +20,13 @@ export default defineType({
       title: 'Description',
       type: "string",
 
-    }),   
+    }),
+    defineField({
+      name: 'ogmetadatas',
+      title: 'Create Meta Data for this page. helps with seo perfomance',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'ogmetadata' } }],
+    }),
   ],
   preview: {
     select: {

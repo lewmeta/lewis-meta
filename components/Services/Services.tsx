@@ -16,7 +16,6 @@ const Services = ({ experience }: Props) => {
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
   };
-
   return (
     <>
       <section className='mt-[50px] text-white'>

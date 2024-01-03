@@ -4,20 +4,29 @@ import TransitionEffect from "@/components/TransitionEffect";
 import { client } from "@/lib/sanity.client";
 import { postQuery } from "@/lib/queries";
 import { Metadata } from "next";
+import { urlForOpenGraph } from "@/lib/urlFor";
 
-export const metadata: Metadata = {
-    title: 'My articles | Lewis Meta',
-    description: 'Learn more about me and my credentials',
-    openGraph: {
-        title: 'My articles',
-        description: 'Learn more about me and my credentials',
-        type: 'article',
-        publishedTime: '2023-01-01T00:00:00.000Z',
-        authors: ['Lewis', 'Meta'],
-    },
-}
-  
 const post = await client.fetch(postQuery)
+
+export async function generateMetadata(): Promise<Metadata> {
+
+    const postmeta: Post[] = await client.fetch(postQuery)
+    const postdata = postmeta[0].ogmetadatas[0]
+    const ogImage = urlForOpenGraph(postdata.ogImage)
+
+    return {
+        title: `${postdata.title}`,
+        description:  `${postdata.description}`,
+        openGraph: {
+            type: 'website',
+            title: `${postdata.title}`,
+            description: `${postdata.description}`,
+            siteName: 'lewismeta',
+            images: ogImage ? [ogImage] : [],
+        },
+    }
+}
+
 
 export default function Page() {
     return (

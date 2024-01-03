@@ -93,13 +93,10 @@ export default defineType({
       of: [{ type: 'reference', to: { type: 'myCodeFields' } }],
     }),
     defineField({
-      name: 'ogImage',
-      title: 'Open Graph Image',
-      type: 'image',
-      description: 'Displayed on social cards and search engine results.',
-      options: {
-        hotspot: true,
-      },
+      name: 'ogmetadatas',
+      title: 'Create Meta Data for this page. helps with seo perfomance',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'ogmetadata' } }],
     }),
   ],
 

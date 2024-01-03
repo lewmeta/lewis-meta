@@ -23,13 +23,27 @@ export async function generateMetadata(
       title, // Ensure title is fetched
       description, // Ensure description is fetched
       ogImage, // Ensure description is fetched
-      ...
+      "ogmetadatas": ogmetadatas[]->{
+        ogImage,
+        title,
+        description,      
+        "authors": authors[]->{
+            name, 
+            image,
+            socials[]->{
+            platform,
+            url
+            }
+        },
+        },
+        ...
     }`;
+
     const singlecause: Post = await client.fetch(query, { slug });
     // Generate OG image URL for the current post's cover image
-    const ogImage = urlForOpenGraph(singlecause?.ogImage);
+    const ogImage = urlForOpenGraph(singlecause?.mainImage);
     return {
-        title: `Blog Details | ${singlecause?.title}`,
+        title: `Articles Details | ${singlecause?.title}`,
         description: singlecause?.description,
         openGraph: ogImage
         ? {

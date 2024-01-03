@@ -11,19 +11,20 @@ type Props = {
 const Blog = ({ post }: Props) => {
 
     const firstPost = post.slice(0, 1)
+    console.log("Post", post)
     return (
         <section className="w-full mt-[50px]">
-            <div className="w-full md:justify-start flex gap-5 items-center justify-start mb-8">
+            <div className="w-full md:justify-start flex gap-5 text-center items-center justify-start mb-8">
                 <Image src={stars} alt='start-img' priority sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," />
                 <h1 className="text-[26px] leading-[36px] md:text-[45px] text-dark dark:text-white md:leading-[55px] sm:text-[30px] sm:leading-[40px] lg:text-[70px] lg:leading-[75px] uppercase font-semibold">published <span className="text-blueColor">articles</span></h1>
                 <Image src={stars} alt='start-img' priority sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," className='overflow-hidden' />
             </div>
-            <div className="w-full flex flex-wrap">
-                <div className="lg:w-[66.6667%] w-full">
+            <div className="w-full flex flex-wrap bg-transparent">
+                <div className="lg:w-[66.6667%] w-full lg:pr-[50px]">
                     <div className="flex flex-wrap gap-12 w-full">
                         {post.map((item, index) => (
                             <div className="w-full lg:pr-6 mb-10 lg:mb-0" key={index}>
-                                <div className="w-full group transition-all duration-300 ease-linear  rounded-md overflow-hidden">
+                                <div className="w-full group transition-all duration-300 ease-linear  rounded-tl-3xl rounded-tr-3xl  rounded-3xl overflow-hidden ">
                                     <div className="w-full sm:h-[300px] h-[180px] md:h-[360px] lg:h-[460px]  overflow-hidden relative transition-all  ease duration-300 ">
                                         <div className="content-[] absolute  z-20 top-[15px] left-[15px] right-[15px] bottom-[15px] bg-black/[0.51] opacity-0  group-hover:visible invisible group-hover:opacity-100 transition-all duration-300 ease-linear" />
                                         <div className="absolute top-[-30%] left-1/2 w-[50px] h-[50px] ml-[-20px] mt-[-20px] rounded-full z-30 cursor-pointer group-hover:top-1/2 transition-all duration-300 ease-linear bg-white/[0.41] flex items-center">
@@ -58,13 +59,15 @@ const Blog = ({ post }: Props) => {
                     </div>
 
                 </div>
-                <div className="lg:w-[33.3333%] w-full">
-                    <div className="p-[20px] w-full overflow-hidden rounded-md border dark:border-white/[0.2] border-dark/[0.2] sticky top-[20%]">
+                <div className="lg:w-[33.3333%] lg:pl-[20px] w-full">
+                    <div className="w-full overflow-hidden dark:bg-black bg-transparent  z-10 sticky top-[20%]">
                         {firstPost.map((item, index) => (
-                            <div className="block space-y-[10px]" key={index}>
-                                <div className="className='relative flex items-center justify-center p-[30px] rounded-[5px] w-full ">
+                            <div className="block bg-transparent" key={index}>
+                                <div className="relative flex items-center justify-center w-full dark:bg-black rounded-3xl pt-[46px] pr-[30px] pb-[62px] pl-[30px] bg-white ">
+                                    <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-25 z-10' />
+                                    <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30' />
                                     {item.authors.map((author, index) => (
-                                        <div className="w-full flex flex-col items-center justify-center h-full" key={index}>
+                                        <div className="w-full flex flex-col items-center justify-center h-full " key={index}>
                                             <div className="w-full rounded-full h-full pr-[25px]">
                                                 <Image src={urlFor(author.image).url()} alt='author' width={200} height={200} className='w-[100px] h-[100px] mx-auto object-cover rounded-full' />
                                             </div>
@@ -92,19 +95,12 @@ const Blog = ({ post }: Props) => {
                                     ))}
 
                                 </div>
-                                {/* Related posts */}
-                                <div className="mb-10 relative w-full dark:bg-black rounded-3xl pt-[46px] pr-[30px] pb-[62px] pl-[30px] bg-white">
+
+                                <div className="mb-10 mt-7 relative w-full dark:bg-black rounded-3xl pt-[46px] pr-[30px] pb-[62px] pl-[30px] bg-white">
                                     <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-25 z-10' />
                                     <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30' />
-                                    <h1 className="dark:text-textDark font-medium dark:opacity-50 text-lg uppercase mb-7 text-ligthText/70">Recent Posts</h1>
-                                    <ul className="list-none relative z-20">
-                                        {/* {posts.map((item, index) => (
-                                    <li className="border-b  border-solid border-[#dbdfe4] mb-3.5 pb-3.5 text-sm leading-6" key={index}>
-                                        <Link href={`/blog/blog-details/${item.slug.current}`} className="block leading-6 text-base dark:text-white text-ligthText opacity-80 hover:text-blueColor transition-all duration-300 ease-in">{item.title}</Link>
-                                    </li>
-                                ))} */}
-                                    </ul>
-                               < div className="w-full">
+                                    <h1 className="dark:text-textDark font-medium dark:opacity-50 text-lg uppercase mb-7 text-ligthText/70">Tags</h1>
+                                    < div className="w-full z-40">
                                         {item.tags.map((item, index) => (
                                             <span className='bg-[#eaeaea] inline-block text-primaryText py-[5px] px-[11px] text-[0.7rem] font-[500] mt-0 mx-[3px] mb-[7px]' key={index}>
                                                 {item.title}
@@ -113,11 +109,11 @@ const Blog = ({ post }: Props) => {
                                     </div>
                                 </div>
                                 <div
-                                    className='relative block p-[30px] group rounded-[5px] w-full '
+                                    className=' mt-7 relative w-full dark:bg-black rounded-3xl pt-[46px] pr-[30px] pb-[62px] pl-[30px] bg-white'
                                 >
-                                    <div className="text-[1.231rem] font-semibold mt-[-30px] mx-[-30px] mb-[30px] border-b dark:border-white/[0.2] border-b-[#eaeaea] px-[30px] py-[30px] pb-[25px] relative flex flex-wrap justify-between items-center">
-                                        <span className='mr-[10px] text-ligthText dark:text-white'>Categories</span>
-                                    </div>
+                                     <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-25 z-10' />
+                                    <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-30' />
+                                    <h1 className="dark:text-textDark font-medium dark:opacity-50 text-lg uppercase mb-7 text-ligthText/70">Categories</h1>
                                     <ul className="w-full">
                                         {item.categories.map((item, index) => (
                                             <li className="text-primaryText font-semibold p-1 break-words w-full" key={index}>
@@ -126,21 +122,6 @@ const Blog = ({ post }: Props) => {
                                             </li>
                                         ))}
                                     </ul>
-
-                                </div>
-                                <div
-                                    className='relative block p-[30px] group rounded-[5px] w-full '
-                                >
-                                    <div className="text-[1.231rem] font-semibold mt-[-30px] mx-[-30px] mb-[30px] border-b dark:border-white/[0.2] border-b-[#eaeaea] px-[30px] py-[30px] pb-[25px] relative flex flex-wrap justify-between items-center">
-                                        <span className='mr-[10px]  text-ligthText dark:text-white'>Tags</span>
-                                    </div>
-                                    <div className="w-full">
-                                        {item.tags.map((item, index) => (
-                                            <span className='bg-[#eaeaea] inline-block text-primaryText py-[5px] px-[11px] text-[0.7rem] font-[500] mt-0 mx-[3px] mb-[7px]' key={index}>
-                                                {item.title}
-                                            </span>
-                                        ))}
-                                    </div>
 
                                 </div>
                             </div>

@@ -70,5 +70,6 @@ import imageArray from './New/imageArray'
 import serviceHeader from './New/serviceHeader'
 import myCodeFields from './New/myCodeFields'
 import comment from './New/comment'
+import ogmetadata from './New/ogmetadata'
 
-export const schemaTypes = [comment, myCodeFields, imageArray, infoTimes, contactInfo, navbar, serviceHeader, bioArray, myservices, serviceTitle, serviceInfo, skills, experience, education, credentials, point, story, mystory, achievements, aboutIntro, home, project, video, contactHeader, blogHeader, post, author, category, tag, blockContent, social, postTags, blogDetails]
+export const schemaTypes = [ogmetadata, comment, myCodeFields, imageArray, infoTimes, contactInfo, navbar, serviceHeader, bioArray, myservices, serviceTitle, serviceInfo, skills, experience, education, credentials, point, story, mystory, achievements, aboutIntro, home, project, video, contactHeader, blogHeader, post, author, category, tag, blockContent, social, postTags, blogDetails]

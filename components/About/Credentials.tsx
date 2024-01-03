@@ -15,6 +15,7 @@ type Props = {
     experience: Experience[]
 }
 const Credentials = ({ credentials, skills, experience, education }: Props) => {
+    console.log("Credits", credentials)
     return (
         <section className="w-full pt-20">
             {credentials.map((item, index) => (

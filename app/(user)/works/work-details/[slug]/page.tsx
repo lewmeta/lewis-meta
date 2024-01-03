@@ -4,8 +4,8 @@ import TransitionEffect from '@/components/TransitionEffect'
 import WorkDetails from '@/components/Works/WorkDetails'
 import Layout from '@/components/Layout';
 import { client } from '@/lib/sanity.client';
-import { projectQuery } from '@/lib/queries';
 import { groq } from 'next-sanity';
+import { urlForOpenGraph } from '@/lib/urlFor';
 
 type Props = {
   params: {
@@ -25,10 +25,14 @@ export async function generateMetadata(
     ...
   }`;
   const singleproject: Projects = await client.fetch(query, { slug });
-
+  const ogImage = urlForOpenGraph(singleproject?.mainImage);
   return {
-    title: `Project Details | ${singleproject?.title}`,
+    title: `Portfolio Details | ${singleproject?.title}`,
     description: singleproject?.description,
+    openGraph: ogImage
+    ? {
+        images : [ogImage]
+    }: {},
   };
 }
 
@@ -83,10 +87,6 @@ export default async function Page({ params: { slug }, }: Props) {
 }`;
 
   const project: Projects = await client.fetch(query, { slug })
-
-  // const proje = await client.fetch(projectQuery)
-
-
 
   return (
     <>
