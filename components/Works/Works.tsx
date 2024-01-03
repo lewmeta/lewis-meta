@@ -27,7 +27,7 @@ const Works = ({ project }: Props) => {
                     </div>
                     <div className="z-20 w-full">
                       <h1 className='text-xl dark:text-white opacity-90 font-medium'>{item.title}</h1>
-                      <p className='dark:text-[#bcbcbc] text-dark/80 opacity-50 text-sm  mb-0.5'>{item.description.substring(0, 100)}</p>
+                      <p className='dark:text-[#bcbcbc] text-dark/80 opacity-50 text-sm  mb-0.5'>{item.description.substring(0, 100)}...</p>
                       <div className="flex items-center justify-between flex-wrap gap-4 md:gap-0 w-full mt-4">
                       </div>
                       <div className="flex items-center justify-between gap-4">
