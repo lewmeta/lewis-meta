@@ -225,11 +225,37 @@ export const servicesHeaderQuery = groq`*[_type == 'serviceHeader']{
 // CONTACT ME
 export const contactInfoQuery = groq`*[_type == 'contactInfo']{
   ...,
+  "ogmetadatas": ogmetadatas[]->{
+    ogImage,
+    title,
+    description,      
+    "authors": authors[]->{
+      name, 
+      image,
+      socials[]->{
+        platform,
+        url
+      }
+    },
+  },
 }`;
 export const infoTimesQuery = groq`*[_type == 'infoTimes']{
   ...,
   "socials": socials[]->{
     url,
     platform,
+  },
+  "ogmetadatas": ogmetadatas[]->{
+    ogImage,
+    title,
+    description,      
+    "authors": authors[]->{
+      name, 
+      image,
+      socials[]->{
+        platform,
+        url
+      }
+    },
   },
 }`;

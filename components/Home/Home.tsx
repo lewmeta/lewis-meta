@@ -29,7 +29,7 @@ const Home = ({ home }: Props) => {
 
                                         <div className="w-full flex lg:gap-12 justify-between lg:justify-start items-center mt-[30px] ">
                                             <Link href="/credential" className="py-[13px] px-[26px] w-auto bg-blueColor text-base text-white hover:bg-transparent hover:text-black border border-transparent hover:dark:bg-black hover:dark:border-white/[0.3] rounded-[50px] overflow-hidden  hover:dark:text-white  hover:border-black/[0.09] transition-all duration-300 ease-linear">More about me</Link>
-                                            <Link href={item.pdf} download={true} target={"_blank"} className="py-[13px] px-[26px] flex items-center gap-3 w-auto bg-transparent text-base text-white hover:bg-blueColor hover:dark:bg-blueColor hover:text-black border hover:dark:border-transparent hover:border-transparent dark:border-white/[0.3] rounded-[50px] overflow-hidden  hover:dark:text-white  border-black/[0.09] transition-all duration-300 ease-linear"> <FaDownload/> Download CV</Link>
+                                            <Link href={item.pdf} download={true} target={"_blank"} className="py-[13px] px-[26px] flex items-center gap-3 w-auto bg-transparent text-base text-black hover:bg-blueColor hover:dark:bg-blueColor hover:text-white dark:text-white border hover:dark:border-transparent hover:border-transparent dark:border-white/[0.3] rounded-[50px] overflow-hidden  hover:dark:text-white border-black/[0.09] transition-all duration-300 ease-linear"> <FaDownload/> Download CV</Link>
                                         </div>
                                     </div>
                                 </div>

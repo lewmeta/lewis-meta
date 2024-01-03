@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaSearch, FaTwitch, FaTwitter, FaYoutube } from "react-icons/fa"
+import { FaFacebookF, FaGithub, FaInstagram, FaLinkedinIn, FaSearch, FaTwitch, FaTwitter, FaYoutube } from "react-icons/fa"
 import urlFor from "@/lib/urlFor"
 import stars from "../../public/images/star.png"
 
@@ -79,13 +79,14 @@ const Blog = ({ post }: Props) => {
                                                 <ul className="w-full h-full flex mt-2">
                                                     {author.socials?.map((social, index) => (
                                                         <li key={index} className="mr-2 w-[30px] h-[30px] flex ">
-                                                            <Link href={social.url} rel="noreferrer noopener" target="_blank" className={`${social.platform === "facebook" ? "!bg-blue-800" : ""} ${social.platform === "instagram" ? "!bg-[#F56040] " : ""}  ${social.platform === "linkedin" ? "!bg-blue-400" : ""} ${social.platform === "twitter" ? "hover:bg-blue-600" : "bg-blue-600"}  ${social.platform === "youtube" ? "!bg-[#c4302b]" : ""} ${social.platform === "twitch" ? "!bg-[#6441A4]" : ""} bg-yellowColor  text-white cursor-pointer w-full h-full flex items-center justify-center z-[1] rounded-full`}>
+                                                            <Link href={social.url} rel="noreferrer noopener" target="_blank" className={`${social.platform === "facebook" ? "!bg-blue-800" : ""} ${social.platform === "instagram" ? "!bg-[#F56040] " : ""}  ${social.platform === "linkedin" ? "!bg-blue-400" : ""} ${social.platform === "twitter" ? "hover:bg-blue-600" : "bg-blue-600"}  ${social.platform === "youtube" ? "!bg-[#c4302b]" : ""} ${social.platform === "twitch" ? "!bg-[#6441A4]" : ""} ${social.platform === "github" ? "!bg-dark" : ""} bg-yellowColor  text-white cursor-pointer w-full h-full flex items-center justify-center z-[1] rounded-full`}>
                                                                 {social.platform === "facebook" && <FaFacebookF className="" />}
                                                                 {social.platform === "instagram" && <FaInstagram />}
                                                                 {social.platform === "linkedin" && <FaLinkedinIn />}
                                                                 {social.platform === "twitter" && <FaTwitter />}
                                                                 {social.platform === "twitch" && <FaTwitch />}
                                                                 {social.platform === "youtube" && <FaYoutube />}
+                                                                {social.platform === "github" && <FaGithub />}
                                                             </Link>
                                                         </li>
                                                     ))}

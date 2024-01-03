@@ -226,11 +226,13 @@ interface ContactInfo {
     subtitle: string;
     description: string;
     title: string;
+    ogmetadatas: OGMEtaData[];
 }
 interface InfoTimesQuery {
     title: string;
     description: string;
     socials : Socials[];
+    ogmetadatas: OGMEtaData[];
 }
 
 
