@@ -58,47 +58,6 @@ const Experience = ({ experience }: Props) => {
                                     </div>
                                 </div>
                             ))}
-                            {/* <div className="w-full flex lg:justify-between flex-wrap mt-[40px]">
-                                <div className="lg:w-[39.666%] w-full lg:pr-[15px]">
-                                    <div className="dark:bg-black bg-white border dark:border-white/[0.2] py-[30px] px-[30px]  rounded-lg relative flex items-center">
-                                        <div className='absolute left-[-46px] w-[10px] h-[10px]  rounded-full flex items-center justify-center z-10'> + </div>
-                                        <div className='content-[] absolute left-[-56px] w-[30px] h-[30px] rounded-full bg-white border-[6px]  border-solid border-blueColor' />
-                                        <div className=" w-[56px] h-[46px] rounded-sm text-base bg-blueColor flex items-center justify-center text-white webkitShadow p-2"><FaBriefcase /></div>
-                                        <div className="pl-4 w-full ">
-                                            <h1 className="font-semibold text-lg dark:text-white text-black  ">Work in company {"Dolores"}</h1>
-                                            <span className="text-[#999] text-sm uppercase mt-[20px]"> 2012-2017</span>
-                                        </div>
-                                    </div>
-                                    <div className="mt-[50px] relative w-full  ml-[-10px]">
-                                        <span className="absolute left-0 opacity-10 font-extrabold trasform rotate-[-90deg] text-dark/30  dark:text-[#666] uppercase text-[64px]">01.</span>
-                                    </div>
-                                </div>
-                                <div className="lg:w-[58.333%] w-full lg:pr-[15px] lg:mt-0 mt-[100px]">
-                                    <div className="dark:bg-black bg-white border dark:border-white/[0.1] border-black/[0.1] pt-[35px] px-[30px] rounded-lg border-solid pb-[45px] relative">
-                                        <div className="bg-blueColor content-[] left-[-20px] top-[40px] w-[6px] h-[6px] rounded-full absolute" />
-
-                                        <div className="w-full ">
-                                            <h1 className="uppercase text-base font-semibold dark:text-white text-black pb-5">COMPLETE THE PROJECT &quot;DOMIK&quot;</h1>
-                                            <p className="font-light pb-5 max-w-[550px] w-full dark:text-primaryText text-base text-dark/70">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don&apos;t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn&apos;t anything embarrassing hidden in the middle of text.</p>
-
-                                            <ul className="w-full pt-[12px] pr-0 pb-[10px] pl-[13px] border border-solid border-black/[0.1] dark:border-white/[0.1]">
-                                                <li className="w-full pt-[5px] pr-0 pb-[5px] pl-[20px] uppercase text-[#999] flex items-center text-sm relative">
-                                                    <span className="content-[] left-0 absolute w-[6px] mt-[-3px] h-[6px] rounded-full bg-blueColor" />
-                                                    <p>DOOR PORTALS PLAN</p>
-                                                </li>
-                                                <li className="w-full pt-[5px] pr-0 pb-[5px] pl-[20px] uppercase text-[#999] flex items-center text-sm relative">
-                                                    <span className="content-[] left-0 absolute w-[6px] mt-[-3px] h-[6px] rounded-full bg-blueColor" />
-                                                    <p>FURNITURE SPECIFICATIONS</p>
-                                                </li>
-                                                <li className="w-full pt-[5px] pr-0 pb-[5px] pl-[20px] uppercase text-[#999] flex items-center text-sm relative">
-                                                    <span className="content-[] left-0 absolute w-[6px] mt-[-3px] h-[6px] rounded-full bg-blueColor" />
-                                                    <p>DOOR PORTALS PLAN</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> */}
                         </div>
                     </div>
                     <div className="mt-[30px]">

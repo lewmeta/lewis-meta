@@ -9,7 +9,6 @@ type Props = {
   aboutintro: AboutIntro[];
 }
 const About = ({ aboutintro }: Props) => {
-  console.log("abouts", aboutintro[0].ogmetadatas)
   return (
     <>
       <section className='w-full h-full  pt-16'>
