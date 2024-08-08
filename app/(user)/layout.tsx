@@ -32,20 +32,20 @@ export async function generateMetadata(): Promise<Metadata> {
    //  pdf.asset->url
    "pdf": pdf.asset->url,
   }`
-  const data:HomeProps[] = await client.fetch(homeQuery)
-  const dataInfo = data[0]
-  const ogImage = urlForOpenGraph(data[0].ogImage)
+  const data: HomeProps[] = await client.fetch(homeQuery)
+  // const dataInfo = data[0]
+  // const ogImage = urlForOpenGraph(data[0].ogImage)
 
   return {
-    title: `${dataInfo?.name} - Personal website`,
-    description: dataInfo?.name,
-    openGraph: {
-      type: 'website',
-      title: `${dataInfo?.name} Personal website`,
-      description: "Welcome to my portfolio website. Get to know me better",
-      siteName: 'lewismeta',
-      images: ogImage ? [ogImage] : [],
-    },
+    title: `Lewis meta - Personal website`,
+    description: `Welcome to the world of code. Hello I am Lewis and this is my world`,
+    // openGraph: {
+    //   type: 'website',
+    //   title: `${dataInfo?.name} Personal website`,
+    //   description: "Welcome to my portfolio website. Get to know me better",
+    //   siteName: 'lewismeta',
+    //   images: ogImage ? [ogImage] : [],
+    // },
   }
 }
 
