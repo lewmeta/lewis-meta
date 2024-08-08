@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../Layout'
 
 const Header = () => {
+
     return (
         <section className='w-full py-[150px] relative z-10 flex items-center'>
             <div className='absolute left-0 top-0 bg-fixed h-full w-full bg-cover bg-center -z-10 bg-no-repeat' style={{ backgroundImage: `url(/images/7.jpg)` }} />
