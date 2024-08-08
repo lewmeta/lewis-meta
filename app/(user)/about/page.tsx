@@ -7,7 +7,7 @@ import Experience from '@/components/About/Experience'
 import Achievement from '@/components/About/Achievement'
 import { client } from '@/lib/sanity.client'
 import { aboutIntroQuery, achievementsQuery, experienceQuery } from '@/lib/queries'
-import { urlForOpenGraph } from '@/lib/urlFor'
+// import { urlForOpenGraph } from '@/lib/urlFor'
 
 const aboutintro = await client.fetch(aboutIntroQuery)
 const achievements = await client.fetch(achievementsQuery)
@@ -17,17 +17,17 @@ export async function generateMetadata(): Promise<Metadata> {
 
     const aboutmeta: AboutIntro[] = await client.fetch(aboutIntroQuery)
     const aboutme = aboutmeta[0]
-    const ogImage = urlForOpenGraph(aboutme.ogmetadatas[0].ogImage)
+    // const ogImage = urlForOpenGraph(aboutme.ogmetadatas[0].ogImage)
 
     return {
-        title: `${aboutme.ogmetadatas[0].title}`,
-        description: `${aboutme.ogmetadatas[0].description}`,
+        title: `About me`,
+        description: `Learn about me`,
         openGraph: {
             type: 'website',
-            title: `${aboutme.ogmetadatas[0].title}`,
-            description: `${aboutme.ogmetadatas[0].description}`,
+            title: `About me`,
+            description: `About me`,
             siteName: 'lewismeta',
-            images: ogImage ? [ogImage] : [],
+            // images: ogImage ? [ogImage] : [],
         },
     }
 }
