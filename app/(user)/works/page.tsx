@@ -7,6 +7,7 @@ import { client } from '@/lib/sanity.client'
 import { projectQuery } from '@/lib/queries'
 import { urlForOpenGraph } from '@/lib/urlFor'
 
+export const revalidate = 0;
 
 const project = await client.fetch(projectQuery)
 
@@ -30,7 +31,8 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-const page = () => {
+
+const Page = () => {
   console.log({ projects: project.length })
   return (
     <>
@@ -43,5 +45,6 @@ const page = () => {
     </>
   )
 }
+// export const dynamic = "force-dynamic";
 
-export default page
+export default Page

@@ -35,8 +35,9 @@ export async function sanityFetch<QueryResponse>({
         token: token,
         perspective: "published",
       }),
+      // cache: process.env.NODE_ENV === "development" ? "no-store" : "force-cache",
       next: {
-        ...(isDraftMode && { revalidate: 3 }),
+        ...(isDraftMode && { revalidate: 0 }),
         tags,
       },
     });

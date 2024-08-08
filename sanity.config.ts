@@ -3,7 +3,7 @@ import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { myTheme } from './theme'
 import { myStructure } from "@/components/Sanity/deskStructure"
-import {codeInput} from '@sanity/code-input'
+import { codeInput } from '@sanity/code-input'
 
 
 // import { apiVersion, dataset, projectId } from './sanity/env'
@@ -21,9 +21,9 @@ export default defineConfig({
 
   projectId,
   dataset,
-  plugins: [deskTool({structure: myStructure
+  plugins: [deskTool({
+    structure: myStructure
   }), visionTool(), codeInput(),],
-
 
   schema: {
     types: schemaTypes,
