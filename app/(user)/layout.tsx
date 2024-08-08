@@ -26,13 +26,13 @@ const caveat = Caveat({
 
 
 export async function generateMetadata(): Promise<Metadata> {
-  const homeQuery = groq`*[_type == "home"]{
-    ogImage,
-    ..., 
-   //  pdf.asset->url
-   "pdf": pdf.asset->url,
-  }`
-  const data: HomeProps[] = await client.fetch(homeQuery)
+  // const homeQuery = groq`*[_type == "home"]{
+  //   ogImage,
+  //   ..., 
+  //  //  pdf.asset->url
+  //  "pdf": pdf.asset->url,
+  // }`
+  // const data: HomeProps[] = await client.fetch(homeQuery)
   // const dataInfo = data[0]
   // const ogImage = urlForOpenGraph(data[0].ogImage)
 

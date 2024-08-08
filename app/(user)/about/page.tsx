@@ -15,20 +15,20 @@ const experience = await client.fetch(experienceQuery)
 
 export async function generateMetadata(): Promise<Metadata> {
 
-    const aboutmeta: AboutIntro[] = await client.fetch(aboutIntroQuery)
+    // const aboutmeta: AboutIntro[] = await client.fetch(aboutIntroQuery)
     // const aboutme = aboutmeta[0]
     // const ogImage = urlForOpenGraph(aboutme.ogmetadatas[0].ogImage)
 
     return {
         title: `About me`,
         description: `Learn about me`,
-        openGraph: {
-            type: 'website',
-            title: `About me`,
-            description: `About me`,
-            siteName: 'lewismeta',
-            // images: ogImage ? [ogImage] : [],
-        },
+        // openGraph: {
+        //     type: 'website',
+        //     title: `About me`,
+        //     description: `About me`,
+        //     siteName: 'lewismeta',
+        //     // images: ogImage ? [ogImage] : [],
+        // },
     }
 }
 
