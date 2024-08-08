@@ -1,6 +1,3 @@
-import AboutIntro from '@/components/Home/AboutIntro'
-import Achievement from '@/components/Home/Achievement'
-import Hireme from '@/components/Home/Hireme'
 import Home from '@/components/Home/Home'
 import Layout from '@/components/Layout'
 import TransitionEffect from '@/components/TransitionEffect'
@@ -15,7 +12,7 @@ export default function Page() {
       <TransitionEffect />
       <main className='w-full lg:pt-16'>
         <Layout className='h-full'>
-          <Home home={home}/>
+          <Home home={home} />
           {/* <AboutIntro /> */}
           {/* <Hireme/> */}
           {/* <Achievement /> */}

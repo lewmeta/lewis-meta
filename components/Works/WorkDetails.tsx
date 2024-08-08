@@ -53,25 +53,24 @@ const WorkDetails = ({ project }: Props) => {
                 <div className="flex flex-wrap w-full relative md:p-[28] sm:p-6 p-0 lg:p-[36px] md:dark:bg-black md:bg-white rounded-3xl">
                     <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-25 z-10 dark:block hidden' />
                     <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-10 dark:block hidden opacity-10' />
-                    <div className="lg:w-1/2 w-full flex-grow-0 flex-shrink-0 basis-auto lg:pr-2 mb-[40px] lg:mb-0 ">
-                        <div className="w-full relative p-[24px] z-20 rounded-3xl dark:bg-black bg-[#FBFBFC]">
-                            <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-10  dark:block hidden' />
-                            <h3 className="dark:text-textDark dark:opacity-50 text-lg capitalize font-medium tracking-tighter text-ligthText mb-3.5">{project.title}</h3>
-                            <p className="dark:text-white dark:opacity-80 text-base mb-5 text-black opacity-40">{project.bioArrays[0].description}</p>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/2 w-full flex-grow-0 flex-shrink-0 basis-auto lg:pl-2 ">
+
+                    <div className="w-full flex-grow-0 flex-shrink-0 basis-auto lg:pl-2 ">
                         <div className="w-full relative p-[24px] z-20 rounded-3xl dark:bg-black bg-[#FBFBFC]">
                             <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-10  dark:block hidden' />
                             <h3 className="dark:text-textDark dark:opacity-50 text-lg capitalize font-medium tracking-tighter text-ligthText mb-3.5">About {project.title}</h3>
                             <p className="dark:text-white dark:opacity-80 text-base mb-5 text-black opacity-40">{project.bioArrays[1].description}</p>
+                            <p className="dark:text-white dark:opacity-80 text-base mb-5 text-black opacity-40">{project.bioArrays[0].description}</p>
 
                         </div>
                     </div>
                 </div>
+
+                {/* Image */}
                 <div className="sm:[350px] h-[250px] md:h-[400px] w-full my-[50px] mb-[30px] rounded-3xl overflow-hidden">
                     <Image src={urlFor(project.imageArrays[0].image).url()} width={800} height={800} sizes="(max-width: 768px) 60vw, (max-width:1200px) 50vw 50vw," alt="project1" className="w-full h-full object-cover" />
                 </div>
+
+                {/* images */}
                 <div className="w-full flex flex-wrap">
                     <div className="lg:w-1/2 w-full flex-grow-0 flex-shrink-0 basis-auto lg:pr-4 mb-[40px] lg:mb-0 ">
                         <div className="w-full sm:[350px] h-[250px] md:h-[400px] rounded-3xl overflow-hidden">
@@ -84,39 +83,9 @@ const WorkDetails = ({ project }: Props) => {
                         </div>
                     </div>
                 </div>
-                {project.myCodeField.language && (
-                    <div className="flex flex-wrap w-full relative md:p-[28] sm:p-6 p-0 lg:p-[36px] md:dark:bg-black md:bg-white rounded-3xl mt-[50px]">
-                        <div className='absolute content-[] left-0 top-0 w-full h-full bg-shadowLight rounded-3xl opacity-25 z-10 dark:block hidden' />
-                        <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-10 dark:block hidden opacity-10' />
-                        {project.bioArrays[3] && (
-                            <div className="w-full flex-grow-0 order-2 mt-5 flex-shrink-0 basis-auto lg:pr-2 mb-[40px] lg:mb-0 ">
-                                <div className="w-full relative p-[24px] z-20 rounded-3xl dark:bg-black bg-[#FBFBFC]">
-                                    <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-10  dark:block hidden' />
-                                    <p className="dark:text-white dark:opacity-80 text-base mb-5 text-black opacity-40">{project.bioArrays[3].description}</p>
-                                </div>
-                            </div>
-                        )}
-                        <div className="w-full flex-grow-0 order-1 flex-shrink-0 basis-auto mt-6 lg:pl-2 ">
-                            <div className="w-full relative p-[24px] z-20 rounded-3xl dark:bg-black bg-[#FBFBFC]">
-                                <div className='absolute left-0 top-0 bottom-0 right-0 bg-shadowLightAfter rounded-3xl -z-10  dark:block hidden' />
-                                {/* <h3 className="dark:text-textDark dark:opacity-50 text-lg capitalize font-medium tracking-tighter text-ligthText mb-3.5">About {project.title}</h3> */}
 
-                                {project.bioArrays[4] && (
-                                    <p className="dark:text-white dark:opacity-80 text-base mb-5 text-black opacity-40">{project.bioArrays[3].description}</p>
-                                )}
-                                {project.myCodeField.language && (
-                                    <Refractor
-                                        language={project.myCodeField?.language}
-                                        value={project.myCodeField.code}
-                                    />
-                                )}
-                            </div>
-                        </div>
-
-                    </div>
-                )}
-            </div>
-        </section>
+            </div >
+        </section >
     )
 }
 

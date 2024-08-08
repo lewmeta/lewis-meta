@@ -17,26 +17,27 @@ export async function generateMetadata(): Promise<Metadata> {
   const ogImage = urlForOpenGraph(credentialsdata.ogImage)
 
   return {
-      title: `${credentialsdata.title}`,
+    title: `${credentialsdata.title}`,
+    description: `${credentialsdata.description}`,
+    authors: [{ name: `${credentialsdata.authors[0].name}`, url: "" },],
+    openGraph: {
+      type: 'website',
+      title: `${credentialsdata.title} - ${credentialsdata.description}`,
       description: `${credentialsdata.description}`,
-      authors:[ {name: `${credentialsdata.authors[0].name}`, url:"" }, ] ,
-      openGraph: {
-          type: 'website',
-          title: `${credentialsdata.title} - ${credentialsdata.description}`,
-          description: `${credentialsdata.description}`,
-          siteName: 'lewismeta',
-          images: ogImage ? [ogImage] : [],
-      },
+      siteName: 'lewismeta',
+      images: ogImage ? [ogImage] : [],
+    },
   }
 }
 
 const page = () => {
+  console.log({ projects: project.length })
   return (
     <>
       <TransitionEffect />
       <main className='w-full min-h-screen'>
         <Layout >
-          <Works project={project}/>
+          <Works project={project} />
         </Layout>
       </main>
     </>
