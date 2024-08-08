@@ -15,7 +15,7 @@ const Hireme = ({home}:Props) => {
                 {home[0].email ? (
                   <Link href={`${home[0].email}`} className="flex items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent border border-white/[0.09] border-solid h-20 w-20 text-white rounded-full font-semibold ">Hire me</Link>
                 ): (
-                  <Link href={`lewisonyango9@gmail.com`} className="flex items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent border border-white/[0.09] border-solid h-20 w-20 text-white rounded-full font-semibold ">Hire me</Link>
+                  <a href={`mailto:lewisonyango9@gmail.com`} className="flex items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent border border-white/[0.09] border-solid h-20 w-20 text-white rounded-full font-semibold ">Hire me</a>
                 )}
             </div>
         </div>
