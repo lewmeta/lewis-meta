@@ -33,7 +33,6 @@ export async function generateMetadata(): Promise<Metadata> {
 
 
 const Page = () => {
-  console.log({ projects: project.length })
   return (
     <>
       <TransitionEffect />
@@ -45,6 +44,6 @@ const Page = () => {
     </>
   )
 }
-// export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 
 export default Page
