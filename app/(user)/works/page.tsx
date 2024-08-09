@@ -8,7 +8,7 @@ import { projectQuery } from '@/lib/queries'
 import { urlForOpenGraph } from '@/lib/urlFor'
 
 
-const project = await client.fetch(projectQuery)
+const project = await client.fetch(projectQuery, { cache: "no-store" })
 
 export async function generateMetadata(): Promise<Metadata> {
 
