@@ -1,5 +1,3 @@
-export const revalidate = 0;
-
 import React from 'react'
 import type { Metadata } from 'next'
 import Layout from '@/components/Layout'
@@ -34,6 +32,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 
 const Page = () => {
+  console.log({ project })
   return (
     <>
       <TransitionEffect />

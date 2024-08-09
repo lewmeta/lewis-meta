@@ -11,6 +11,9 @@ import { urlForOpenGraph } from '@/lib/urlFor'
 import { groq } from 'next-sanity'
 import { client } from '@/lib/sanity.client'
 
+// export const revalidate = 0;
+
+
 const lexend_deca = Lexend_Deca({
   subsets: ['latin'],
   variable: '--font-lex',
@@ -48,8 +51,6 @@ export async function generateMetadata(): Promise<Metadata> {
     // },
   }
 }
-
-export const revalidate = 0;
 
 export default function RootLayout({
   children,
