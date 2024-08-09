@@ -1,3 +1,5 @@
+export const revalidate = 0;
+
 import React from 'react'
 import type { Metadata } from 'next'
 import Layout from '@/components/Layout'
@@ -7,7 +9,6 @@ import { client } from '@/lib/sanity.client'
 import { projectQuery } from '@/lib/queries'
 import { urlForOpenGraph } from '@/lib/urlFor'
 
-export const revalidate = 0;
 
 const project = await client.fetch(projectQuery)
 
